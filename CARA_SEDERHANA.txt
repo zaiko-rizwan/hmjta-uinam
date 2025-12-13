@@ -1,0 +1,88 @@
+============================================
+CARA SEDERHANA - FORM ASPIRASI KE GOOGLE SHEETS
+============================================
+
+LANGKAH 1: BUAT GOOGLE SHEETS
+-------------------------------
+1. Buka https://sheets.google.com
+2. Buat spreadsheet baru (kosong, tidak perlu isi apa-apa)
+3. Beri nama misalnya "Aspirasi HMJTA"
+4. SIMPAN spreadsheet ini
+
+
+LANGKAH 2: BUAT GOOGLE APPS SCRIPT
+-----------------------------------
+1. Di Google Sheets yang baru dibuat, klik menu "Extensions" > "Apps Script"
+2. Hapus semua kode yang ada di editor
+3. Salin SEMUA kode dari file: google-apps-script-code.js
+4. Tempel di editor Google Apps Script
+5. Klik tombol "Save" (Ctrl+S)
+6. Beri nama project: "Aspirasi HMJTA"
+
+
+LANGKAH 3: DEPLOY SCRIPT
+--------------------------
+1. Di Google Apps Script, klik tombol "Deploy" (di kanan atas)
+2. Pilih "New deployment"
+3. Klik ikon "Select type" > pilih "Web app"
+4. Isi:
+   - Description: "Form Aspirasi"
+   - Execute as: "Me"
+   - Who has access: "Anyone" (PENTING!)
+5. Klik "Deploy"
+6. Akan muncul popup "Authorization required", klik "Authorize access"
+7. Pilih akun Google Anda
+8. Klik "Advanced" > "Go to Aspirasi HMJTA (unsafe)"
+9. Klik "Allow"
+10. Setelah deploy, akan muncul "Web app URL"
+11. SALIN URL INI (contoh: https://script.google.com/macros/s/...)
+
+
+LANGKAH 4: UPDATE URL DI WEBSITE
+----------------------------------
+1. Buka file: index.html
+2. Cari baris yang ada: <form id="aspirasi-form" method="GET" action="...
+3. Ganti URL yang ada di action="..." dengan URL yang Anda salin di Langkah 3
+4. Contoh:
+   - Sebelum: action="https://script.google.com/macros/s/URL_LAMA/exec"
+   - Sesudah: action="https://script.google.com/macros/s/URL_BARU/exec"
+5. Simpan file index.html
+
+
+LANGKAH 5: TEST
+---------------
+1. Buka website di browser
+2. Pergi ke bagian "Aspirasi"
+3. Isi form:
+   - Nama: Test
+   - NIM: 123456
+   - Email: test@test.com
+   - Pesan: Ini test
+4. Klik "Kirim"
+5. Buka Google Sheets, cek apakah data sudah masuk
+
+
+============================================
+TROUBLESHOOTING
+============================================
+
+MASALAH: Data tidak masuk ke Sheets
+SOLUSI:
+1. Pastikan "Who has access" = "Anyone" saat deploy
+2. Pastikan URL di form sama dengan URL dari deployment
+3. Cek log di Google Apps Script > Executions
+4. Pastikan function doGet() ada di script (bukan hanya doPost)
+
+MASALAH: Error saat deploy
+SOLUSI:
+1. Pastikan sudah klik "Authorize" dan "Allow"
+2. Coba deploy ulang
+
+MASALAH: Form tidak submit
+SOLUSI:
+1. Pastikan semua field punya name="..." (nama, nim, email, pesan)
+2. Pastikan form punya method="GET" dan action="URL_ANDA"
+3. Pastikan button type="submit"
+
+============================================
+

@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Database Alumni - HMJTA UINAM</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #4D121B;
+      --primary-dark: #591119;
+      --secondary: #C6B7A3;
+      --white: #FFFFFF;
+      --black: #000000;
+      --text: #f2f2f2;
+      --muted: #b3b3b3;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: var(--white);
+      color: var(--black);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    header {
+      position: fixed;
+      top: 0; left: 0; width: 100%;
+      background: var(--primary);
+      z-index: 20;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    .nav {
+      display: flex; align-items: center; justify-content: space-between;
+      max-width: 1100px; margin: 0 auto; padding: 14px 22px; color: var(--white);
+    }
+
+    .brand { display: flex; align-items: center; gap: 12px; font-weight: 800; font-size: clamp(20px, 3vw, 32px); letter-spacing: 0.4px; white-space: nowrap; }
+    .brand .logo { width: 100px; height: 100px; border-radius: 6px; display: inline-flex; align-items: center; justify-content: center; position: relative; overflow: visible; }
+    .brand .logo::before { content: ""; position: absolute; width: 78%; height: 78%; background: var(--white); border-radius: 10px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15); z-index: 0; }
+    .brand .logo img { width: 100%; height: 100%; object-fit: contain; display: block; position: relative; z-index: 1; }
+
+    nav ul { display: flex; list-style: none; gap: 24px; font-size: 14px; font-weight: 600; }
+    nav a { padding: 6px 0; position: relative; transition: color 0.3s ease; }
+    nav a.active, nav a:hover { color: var(--white); }
+    nav a::after { content: ''; position: absolute; left: 50%; right: 50%; bottom: -6px; height: 2px; background: var(--white); transition: left 0.4s cubic-bezier(0.4, 0, 0.2, 1), right 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease; opacity: 0; }
+    nav a.active::after { left: 0; right: 0; opacity: 1; }
+    nav a:hover::after { left: 0; right: 0; opacity: 1; }
+
+    .page-header {
+      margin-top: 80px;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+      color: var(--white);
+      padding: 60px 22px 40px;
+      text-align: center;
+    }
+    .page-header h1 { font-size: clamp(32px, 5vw, 48px); font-weight: 800; margin-bottom: 12px; letter-spacing: 0.5px; }
+    .page-header p { font-size: 16px; opacity: 0.9; max-width: 700px; margin: 0 auto; }
+
+    .container { max-width: 1200px; margin: 0 auto; padding: 40px 22px; }
+
+    .back-link { display: inline-flex; align-items: center; gap: 8px; color: var(--primary); font-weight: 600; text-decoration: none; margin-bottom: 24px; transition: color 0.2s ease; }
+    .back-link:hover { color: var(--primary-dark); }
+
+    .filter-section {
+      background: #f9f9f9;
+      padding: 24px;
+      border-radius: 12px;
+      margin-bottom: 32px;
+    }
+
+    .filter-group {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .filter-group label {
+      font-weight: 600;
+      font-size: 14px;
+      color: #333;
+    }
+
+    .filter-group select,
+    .filter-group input {
+      padding: 10px 14px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      font-family: inherit;
+      font-size: 14px;
+      background: white;
+    }
+
+    .filter-group input {
+      flex: 1;
+      min-width: 200px;
+    }
+
+    .alumni-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 24px;
+      margin-top: 32px;
+    }
+
+    .alumni-card {
+      background: white;
+      border: 1px solid #e5e5e5;
+      border-radius: 12px;
+      padding: 24px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      min-width: 280px;
+      max-width: 320px;
+      flex: 0 0 auto;
+      text-align: center;
+    }
+
+    .alumni-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+    }
+
+    .alumni-photo {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin: 0 auto 16px;
+      display: block;
+      border: 3px solid var(--primary);
+      background: #f0f0f0;
+    }
+
+    .alumni-name {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 8px;
+    }
+
+    .alumni-info {
+      font-size: 14px;
+      color: #666;
+      margin-bottom: 6px;
+    }
+
+    .alumni-info strong {
+      color: #333;
+      font-weight: 600;
+    }
+
+    .alumni-year {
+      display: inline-block;
+      background: var(--primary);
+      color: white;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 600;
+      margin-top: 12px;
+    }
+
+    .empty-state {
+      text-align: center;
+      padding: 60px 22px;
+      color: #888;
+    }
+
+    footer {
+      text-align: center;
+      padding: 16px;
+      background: var(--primary);
+      color: var(--white);
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.3px;
+      margin-top: 60px;
+    }
+
+    @media (max-width: 720px) {
+      nav ul { gap: 16px; }
+      .nav { padding: 12px 16px; }
+      .brand { font-size: 24px; }
+      .brand .logo { width: 60px; height: 60px; }
+      .page-header { padding: 40px 16px 30px; }
+      .alumni-grid { grid-template-columns: 1fr; }
+      .filter-group { flex-direction: column; align-items: stretch; }
+      .filter-group input { min-width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="nav">
+      <div class="brand">
+        <span class="logo"><img src="assets/logo/logo hmjta.png" alt="Logo HMJTA"></span>
+        <span>HMJTA UINAM</span>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html#beranda">Beranda</a></li>
+          <li><a href="index.html#profil">Profil</a></li>
+          <li><a href="index.html#struktur">Struktur</a></li>
+          <li><a href="album.html">Album</a></li>
+          <li><a href="alumni.html" class="active">Alumni</a></li>
+          <li><a href="index.html#arsistore">Arsistore</a></li>
+          <li><a href="index.html#aspirasi">Aspirasi</a></li>
+          <li><a href="index.html#kontak">Kontak</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <div class="page-header">
+    <h1>Database Alumni</h1>
+    <p>Jejak alumni Teknik Arsitektur UIN Alauddin Makassar dari angkatan 2003-2021</p>
+  </div>
+
+  <div class="container">
+    <a href="index.html#alumni" class="back-link">← Kembali ke Beranda</a>
+
+    <div class="filter-section">
+      <div class="filter-group">
+        <label for="filter-year">Tahun:</label>
+        <select id="filter-year">
+          <option value="">Semua Tahun</option>
+          <option value="2003">2003</option>
+          <option value="2004">2004</option>
+          <option value="2005">2005</option>
+          <option value="2006">2006</option>
+          <option value="2007">2007</option>
+          <option value="2008">2008</option>
+          <option value="2009">2009</option>
+          <option value="2010">2010</option>
+          <option value="2011">2011</option>
+          <option value="2012">2012</option>
+          <option value="2013">2013</option>
+          <option value="2014">2014</option>
+          <option value="2015">2015</option>
+          <option value="2016">2016</option>
+          <option value="2017">2017</option>
+          <option value="2018">2018</option>
+          <option value="2019">2019</option>
+          <option value="2020">2020</option>
+          <option value="2021">2021</option>
+        </select>
+        <label for="search">Cari:</label>
+        <input type="text" id="search" placeholder="Cari nama, NIM, atau pekerjaan...">
+      </div>
+    </div>
+
+    <div id="alumni-list" class="alumni-grid">
+      <div class="empty-state">Memuat data alumni...</div>
+    </div>
+  </div>
+
+  <footer>
+    Copyright © HMJTA 2022. #ArsitekturJaya
+  </footer>
+
+  <script>
+    (function() {
+      const listEl = document.getElementById('alumni-list');
+      const filterYear = document.getElementById('filter-year');
+      const searchInput = document.getElementById('search');
+
+      /* 
+      ============================================
+      PETUNJUK UNTUK ADMIN - MENAMBAHKAN DATA ALUMNI
+      ============================================
+      
+      Untuk menambahkan data alumni, edit array di bawah ini dengan format:
+      {
+        name: 'Nama Lengkap Alumni',
+        nim: 'NIM',
+        year: TAHUN_LULUS,  // 2003-2021
+        email: 'email@example.com',
+        phone: '081234567890',
+        job: 'Pekerjaan/Saat ini bekerja sebagai...',
+        photo: 'assets/alumni/nama-file.jpg'  // Path foto (opsional)
+      }
+      
+      CARA MENAMBAHKAN FOTO:
+      1. Buat folder: assets/alumni/
+      2. Masukkan foto alumni ke folder tersebut
+      3. Gunakan nama file yang mudah diingat (contoh: ahmad-fauzi.jpg)
+      4. Tambahkan path di field photo: 'assets/alumni/ahmad-fauzi.jpg'
+      
+      CONTOH:
+      {
+        name: 'Ahmad Fauzi',
+        nim: '200301001',
+        year: 2003,
+        email: 'ahmad.fauzi@example.com',
+        phone: '081234567890',
+        job: 'Arsitek di PT. ABC',
+        photo: 'assets/alumni/ahmad-fauzi.jpg'
+      }
+      
+      CATATAN:
+      - Jika tidak ada foto, field photo bisa dikosongkan atau dihapus
+      - Foto akan otomatis menggunakan placeholder jika tidak ditemukan
+      - Format foto: JPG, PNG (disarankan ukuran 200x200px atau lebih besar)
+      
+      ============================================
+      */
+      const alumni = [
+        // Template data alumni - EDIT dengan data yang sebenarnya
+        // Format: { name: 'Nama', nim: 'NIM', year: TAHUN, email: 'email', phone: 'phone', job: 'Pekerjaan', photo: 'path/foto.jpg' }
+        { name: 'Ahmad Fauzi', nim: '200301001', year: 2003, email: 'ahmad.fauzi@example.com', phone: '081234567890', job: 'Arsitek di PT. ABC', photo: 'assets/alumni/ahmad-fauzi.jpg' },
+        { name: 'Siti Nurhaliza', nim: '200301002', year: 2003, email: 'siti.nurhaliza@example.com', phone: '081234567891', job: 'Konsultan Arsitektur', photo: 'assets/alumni/siti-nurhaliza.jpg' },
+        { name: 'Budi Santoso', nim: '200401001', year: 2004, email: 'budi.santoso@example.com', phone: '081234567892', job: 'Project Manager', photo: 'assets/alumni/budi-santoso.jpg' },
+        { name: 'Dewi Lestari', nim: '200401002', year: 2004, email: 'dewi.lestari@example.com', phone: '081234567893', job: 'Designer Interior', photo: 'assets/alumni/dewi-lestari.jpg' },
+        { name: 'Muhammad Rizki', nim: '200501001', year: 2005, email: 'muhammad.rizki@example.com', phone: '081234567894', job: 'Arsitek', photo: 'assets/alumni/muhammad-rizki.jpg' },
+        { name: 'Indah Permata', nim: '200501002', year: 2005, email: 'indah.permata@example.com', phone: '081234567895', job: 'Konsultan', photo: 'assets/alumni/indah-permata.jpg' },
+        { name: 'Rudi Hartono', nim: '201001001', year: 2010, email: 'rudi.hartono@example.com', phone: '081234567896', job: 'Arsitek Senior', photo: 'assets/alumni/rudi-hartono.jpg' },
+        { name: 'Lina Wijaya', nim: '201001002', year: 2010, email: 'lina.wijaya@example.com', phone: '081234567897', job: 'Designer', photo: 'assets/alumni/lina-wijaya.jpg' },
+        { name: 'Andi Pratama', nim: '201501001', year: 2015, email: 'andi.pratama@example.com', phone: '081234567898', job: 'Project Manager', photo: 'assets/alumni/andi-pratama.jpg' },
+        { name: 'Sari Indah', nim: '201501002', year: 2015, email: 'sari.indah@example.com', phone: '081234567899', job: 'Arsitek', photo: 'assets/alumni/sari-indah.jpg' },
+        { name: 'Bambang Surya', nim: '201901001', year: 2019, email: 'bambang.surya@example.com', phone: '081234567900', job: 'Konsultan Arsitektur', photo: 'assets/alumni/bambang-surya.jpg' },
+        { name: 'Maya Sari', nim: '201901002', year: 2019, email: 'maya.sari@example.com', phone: '081234567901', job: 'Designer Interior', photo: 'assets/alumni/maya-sari.jpg' },
+        { name: 'Fajar Nugroho', nim: '202001001', year: 2020, email: 'fajar.nugroho@example.com', phone: '081234567902', job: 'Arsitek', photo: 'assets/alumni/fajar-nugroho.jpg' },
+        { name: 'Rina Kartika', nim: '202001002', year: 2020, email: 'rina.kartika@example.com', phone: '081234567903', job: 'Konsultan', photo: 'assets/alumni/rina-kartika.jpg' },
+        { name: 'Dedi Kurniawan', nim: '202101001', year: 2021, email: 'dedi.kurniawan@example.com', phone: '081234567904', job: 'Arsitek Junior', photo: 'assets/alumni/dedi-kurniawan.jpg' },
+        { name: 'Putri Ayu', nim: '202101002', year: 2021, email: 'putri.ayu@example.com', phone: '081234567905', job: 'Designer', photo: 'assets/alumni/putri-ayu.jpg' },
+        // TAMBAHKAN DATA ALUMNI LAINNYA DI SINI
+        // Format: { name: 'Nama', nim: 'NIM', year: TAHUN, email: 'email', phone: 'phone', job: 'Pekerjaan', photo: 'assets/alumni/nama-file.jpg' }
+      ];
+
+      let filteredAlumni = [...alumni];
+
+      const render = (items) => {
+        if (!items || items.length === 0) {
+          listEl.innerHTML = '<div class="empty-state">Tidak ada data alumni yang ditemukan.</div>';
+          return;
+        }
+
+        listEl.innerHTML = '';
+        items.forEach(item => {
+          const card = document.createElement('div');
+          card.className = 'alumni-card';
+          const photoSrc = item.photo || 'https://via.placeholder.com/120?text=No+Photo';
+          card.innerHTML = `
+            <img src="${photoSrc}" alt="${item.name}" class="alumni-photo" onerror="this.src='https://via.placeholder.com/120?text=No+Photo'">
+            <div class="alumni-name">${item.name}</div>
+            <div class="alumni-info"><strong>NIM:</strong> ${item.nim}</div>
+            <div class="alumni-info"><strong>Email:</strong> ${item.email || '-'}</div>
+            <div class="alumni-info"><strong>Telepon:</strong> ${item.phone || '-'}</div>
+            <div class="alumni-info"><strong>Pekerjaan:</strong> ${item.job || '-'}</div>
+            <div class="alumni-year">Lulus ${item.year}</div>
+          `;
+          listEl.appendChild(card);
+        });
+      };
+
+      const filter = () => {
+        const yearFilter = filterYear.value;
+        const searchTerm = searchInput.value.toLowerCase().trim();
+
+        filteredAlumni = alumni.filter(item => {
+          const matchYear = !yearFilter || item.year.toString() === yearFilter;
+          const matchSearch = !searchTerm || 
+            item.name.toLowerCase().includes(searchTerm) ||
+            item.nim.toLowerCase().includes(searchTerm) ||
+            (item.job && item.job.toLowerCase().includes(searchTerm));
+          
+          return matchYear && matchSearch;
+        });
+
+        render(filteredAlumni);
+      };
+
+      filterYear.addEventListener('change', filter);
+      searchInput.addEventListener('input', filter);
+
+      // Initial render
+      render(alumni);
+    })();
+  </script>
+</body>
+</html>
+

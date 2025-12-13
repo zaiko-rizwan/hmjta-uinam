@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Album Foto - HMJTA UINAM</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #4D121B;
+      --primary-dark: #591119;
+      --secondary: #C6B7A3;
+      --white: #FFFFFF;
+      --black: #000000;
+      --dark: #1d1d1d;
+      --text: #f2f2f2;
+      --muted: #b3b3b3;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: var(--white);
+      color: var(--black);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    header {
+      position: fixed;
+      top: 0; left: 0; width: 100%;
+      background: var(--primary);
+      z-index: 20;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    .nav {
+      display: flex; align-items: center; justify-content: space-between;
+      max-width: 1100px; margin: 0 auto; padding: 14px 22px; color: var(--white);
+    }
+
+    .brand { display: flex; align-items: center; gap: 12px; font-weight: 800; font-size: clamp(20px, 3vw, 32px); letter-spacing: 0.4px; white-space: nowrap; }
+    .brand .logo { width: 100px; height: 100px; border-radius: 6px; display: inline-flex; align-items: center; justify-content: center; position: relative; overflow: visible; }
+    .brand .logo::before { content: ""; position: absolute; width: 78%; height: 78%; background: var(--white); border-radius: 10px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15); z-index: 0; }
+    .brand .logo img { width: 100%; height: 100%; object-fit: contain; display: block; position: relative; z-index: 1; }
+
+    nav ul { display: flex; list-style: none; gap: 24px; font-size: 14px; font-weight: 600; }
+    nav a { padding: 6px 0; position: relative; transition: color 0.3s ease; }
+    nav a.active, nav a:hover { color: var(--white); }
+    nav a::after { content: ''; position: absolute; left: 50%; right: 50%; bottom: -6px; height: 2px; background: var(--white); transition: left 0.4s cubic-bezier(0.4, 0, 0.2, 1), right 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease; opacity: 0; }
+    nav a.active::after { left: 0; right: 0; opacity: 1; }
+    nav a:hover::after { left: 0; right: 0; opacity: 1; }
+
+    .page-header {
+      margin-top: 80px;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+      color: var(--white);
+      padding: 60px 22px 40px;
+      text-align: center;
+    }
+    .page-header h1 { font-size: clamp(32px, 5vw, 48px); font-weight: 800; margin-bottom: 12px; letter-spacing: 0.5px; }
+    .page-header p { font-size: 16px; opacity: 0.9; max-width: 700px; margin: 0 auto; }
+
+    .album-container { max-width: 1200px; margin: 0 auto; padding: 40px 22px; }
+    .back-link { display: inline-flex; align-items: center; gap: 8px; color: var(--primary); font-weight: 600; text-decoration: none; margin-bottom: 24px; transition: color 0.2s ease; }
+    .back-link:hover { color: var(--primary-dark); }
+
+    .album-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 24px; }
+    .album-card { background: #f9f9f9; border: 1px solid #e5e5e5; border-radius: 12px; overflow: visible; box-shadow: 0 2px 8px rgba(0,0,0,0.08); display: grid; gap: 14px; padding: 14px; }
+    .album-thumb { position: relative; width: 100%; height: 200px; background: transparent; overflow: visible; cursor: pointer; }
+    
+    /* Stacked photo style */
+    .album-stack {
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+    .album-stack img {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 14px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .album-stack img:nth-child(1) { transform: translate(-12px, -10px) scale(0.94); z-index: 1; }
+    .album-stack img:nth-child(2) { transform: translate(0, 0) scale(0.97); z-index: 2; }
+    .album-stack img:nth-child(3) { transform: translate(12px, 10px) scale(1); z-index: 3; }
+    .album-stack:hover img:nth-child(1) { transform: translate(-16px, -14px) scale(0.95); }
+    .album-stack:hover img:nth-child(2) { transform: translate(0px, -4px) scale(0.99); }
+    .album-stack:hover img:nth-child(3) { transform: translate(18px, 12px) scale(1.02); box-shadow: 0 12px 28px rgba(0,0,0,0.3); }
+    
+    .album-info { padding: 0; display: grid; gap: 6px; }
+    .album-title { font-weight: 700; font-size: 14px; color: #222; }
+    .album-meta { font-size: 12px; color: #666; }
+
+    .loading, .empty { text-align: center; padding: 60px 22px; color: #888; }
+
+    footer { text-align: center; padding: 16px; background: var(--primary); color: var(--white); font-size: 12px; font-weight: 600; letter-spacing: 0.3px; margin-top: 60px; }
+
+    /* Lightbox */
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.55);
+      backdrop-filter: blur(6px);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      z-index: 999;
+    }
+    .lightbox.is-visible { display: flex; }
+    .lightbox-content {
+      max-width: min(90vw, 1100px);
+      max-height: 90vh;
+      border-radius: 12px;
+      overflow: visible;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.35);
+      background: transparent;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .lightbox-content img {
+      display: block;
+      max-width: min(90vw, 1100px);
+      max-height: 90vh;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      background: #000;
+      border-radius: 12px;
+    }
+    .lightbox-close {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      border: none;
+      background: rgba(0,0,0,0.6);
+      color: #fff;
+      font-size: 18px;
+      cursor: pointer;
+      display: grid;
+      place-items: center;
+      transition: background 0.2s ease;
+    }
+    .lightbox-close:hover { background: rgba(0,0,0,0.8); }
+
+    .lightbox-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      border: none;
+      background: rgba(0,0,0,0.5);
+      color: #fff;
+      font-size: 20px;
+      cursor: pointer;
+      display: grid;
+      place-items: center;
+      transition: background 0.2s ease;
+    }
+    .lightbox-nav:hover { background: rgba(0,0,0,0.8); }
+    .lightbox-prev { left: 12px; position: absolute; }
+    .lightbox-next { right: 12px; position: absolute; }
+
+    @media (max-width: 720px) {
+      nav ul { gap: 16px; }
+      .nav { padding: 12px 16px; }
+      .brand { font-size: 24px; }
+      .brand .logo { width: 60px; height: 60px; }
+      .page-header { padding: 40px 16px 30px; }
+      .album-grid { grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 20px; }
+      .album-thumb { height: 160px; }
+    }
+  </style>
+  <script src="data/news.js"></script>
+</head>
+<body>
+  <header>
+    <div class="nav">
+      <div class="brand">
+        <span class="logo"><img src="assets/logo/logo hmjta.png" alt="Logo HMJTA"></span>
+        <span>HMJTA UINAM</span>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html#beranda">Beranda</a></li>
+          <li><a href="index.html#profil">Profil</a></li>
+          <li><a href="index.html#struktur">Struktur</a></li>
+          <li><a href="album.html" class="active">Album</a></li>
+          <li><a href="index.html#alumni">Alumni</a></li>
+          <li><a href="index.html#arsistore">Arsistore</a></li>
+          <li><a href="index.html#aspirasi">Aspirasi</a></li>
+          <li><a href="index.html#kontak">Kontak</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <div class="page-header">
+    <h1>Album Foto Kegiatan</h1>
+    <p>Kumpulan dokumentasi kegiatan HMJTA UINAM</p>
+  </div>
+
+  <div class="album-container">
+    <a href="index.html#album" class="back-link">← Kembali ke Beranda</a>
+    <div id="album-list" class="album-grid">
+      <div class="loading">Memuat album...</div>
+    </div>
+  </div>
+
+  <div class="lightbox" id="lightbox">
+    <div class="lightbox-content">
+      <button class="lightbox-close" aria-label="Tutup">×</button>
+      <button class="lightbox-nav lightbox-prev" aria-label="Sebelumnya">‹</button>
+      <button class="lightbox-nav lightbox-next" aria-label="Berikutnya">›</button>
+      <img id="lightbox-img" src="" alt="">
+    </div>
+  </div>
+
+  <footer>
+    Copyright © HMJTA 2022. #ArsitekturJaya
+  </footer>
+
+  <script>
+    (function() {
+      const listEl = document.getElementById('album-list');
+      const lightbox = document.getElementById('lightbox');
+      const lightboxImg = document.getElementById('lightbox-img');
+      const closeBtn = document.querySelector('.lightbox-close');
+      const prevBtn = document.querySelector('.lightbox-prev');
+      const nextBtn = document.querySelector('.lightbox-next');
+      if (!listEl) return;
+
+      /* 
+      ============================================
+      PETUNJUK UNTUK ADMIN - MENAMBAHKAN ALBUM FOTO
+      ============================================
+      
+      Untuk menambahkan album foto baru, ikuti langkah berikut:
+      
+      1. Siapkan folder untuk foto album:
+         - Buat folder baru di: assets/album/[NAMA_ALBUM]/
+         - Contoh: assets/album/Kunjungan Desa/
+         - Masukkan semua foto kegiatan ke dalam folder tersebut
+      
+      2. Tambahkan data album di bawah ini dengan format:
+         {
+           title: 'Nama Album',           // Nama kegiatan/album
+           date: 'YYYY-MM-DD',            // Tanggal kegiatan (format: tahun-bulan-tanggal)
+           images: [                      // Array path foto (bisa banyak foto)
+             'assets/album/[NAMA_ALBUM]/foto1.jpg',
+             'assets/album/[NAMA_ALBUM]/foto2.jpg',
+             'assets/album/[NAMA_ALBUM]/foto3.jpg',
+             // Tambahkan lebih banyak foto jika ada
+           ]
+         }
+      
+      3. CONTOH PENGGUNAAN:
+         {
+           title: 'Workshop Arsitektur',
+           date: '2025-07-15',
+           images: [
+             'assets/album/Workshop Arsitektur/workshop1.jpg',
+             'assets/album/Workshop Arsitektur/workshop2.jpg',
+             'assets/album/Workshop Arsitektur/workshop3.jpg',
+             'assets/album/Workshop Arsitektur/workshop4.jpg'
+           ]
+         }
+      
+      4. CATATAN PENTING:
+         - Pastikan path foto sesuai dengan struktur folder yang Anda buat
+         - Nama file foto tidak boleh mengandung spasi (gunakan underscore _ atau tanpa spasi)
+         - Format tanggal: YYYY-MM-DD (contoh: 2025-07-15 untuk 15 Juli 2025)
+         - Foto pertama dalam array akan menjadi cover album di homepage
+         - Tiga foto pertama akan ditampilkan sebagai stacked preview
+         - Semua foto akan muncul di lightbox saat album diklik
+      
+      5. CARA MENAMBAHKAN:
+         - Copy salah satu contoh album di bawah
+         - Paste sebelum tanda penutup array ]
+         - Tambahkan koma (,) setelah album sebelumnya
+         - Edit title, date, dan images sesuai kebutuhan
+      
+      ============================================
+      */
+      const albums = [
+        { title: 'Kunjungan FIMA SUL-SEL', date: '2025-06-24', images: ['assets/album/Kunjungan FIMA SUL-SEL/FIMA.jpg', 'assets/album/Kunjungan FIMA SUL-SEL/FIMA 1.jpg', 'assets/album/Kunjungan FIMA SUL-SEL/FIMA 2.jpg','assets/album/Kunjungan FIMA SUL-SEL/FIMA 3.jpg'] },
+        { title: 'Bazar & Dialog Arsitektur Neo-vernakuler Oleh Kakanda Senior Ar. Muhammad Rasyidin Rauf, IAI, HDII', date: '2025-05-17', images: ['assets/album/Bazar & Dialog Arsitektur Neo-vernakuler Oleh Ar. Muhammad Rasyidin Rauf, IAI, HDII/1.jpg', 'assets/album/Bazar & Dialog Arsitektur Neo-vernakuler Oleh Ar. Muhammad Rasyidin Rauf, IAI, HDII/2.jpg', 'assets/album/Bazar & Dialog Arsitektur Neo-vernakuler Oleh Ar. Muhammad Rasyidin Rauf, IAI, HDII/3.jpg', 'assets/album/Bazar & Dialog Arsitektur Neo-vernakuler Oleh Ar. Muhammad Rasyidin Rauf, IAI, HDII/4.jpg'] },
+        { title: 'Fun Mini soccer & Badminton', date: '2025-05-24', images: ['assets/album/Fun Mini soccer & Badminton/1.jpg', 'assets/album/Fun Mini soccer & Badminton/2.jpg'] },
+        { title: 'Softskill', date: '2025-05-22', images: ['assets/album/Softskil/1.jpg', 'assets/album/Softskil/2.jpg','assets/album/Softskil/3.jpg','assets/album/Softskil/4.jpg','assets/album/Softskil/5.jpg','assets/album/Softskil/6.jpg','assets/album/Softskil/7.jpg','assets/album/Softskil/8.jpg'] },
+        { title: 'PBAK TEKNIK ARSITEKTUR 2025', date: '2025-08-29', images: ['assets/album/PBAK TEKNIK ARSITEKTUR 2025/1.jpg', 'assets/album/PBAK TEKNIK ARSITEKTUR 2025/2.jpg', 'assets/album/PBAK TEKNIK ARSITEKTUR 2025/3.jpg','assets/album/PBAK TEKNIK ARSITEKTUR 2025/4.jpg','assets/album/PBAK TEKNIK ARSITEKTUR 2025/5.jpg','assets/album/PBAK TEKNIK ARSITEKTUR 2025/6.jpg'] },  
+        { title: 'Bazar & Dialog Arsitektur Neo-vernakuler oleh Kakanda Senior Dr. Ar. Ir. Zulkarnain AS, S.T., M.T., IAI', date: '2025-09-21', images: ['assets/album/Bazar & Dialog Arsitektur Neo-vernakuler oleh Kakanda Senior Dr. Ar. Ir. Zulkarnain AS, S.T., M.T., IAI/1.jpg'] },
+        { title: 'Jelajah Arsitektur Neo-vernakuler', date: '2025-10-04', images: ['assets/album/Jelajah Arsitektur Neo-vernakuler/1.jpg','assets/album/Jelajah Arsitektur Neo-vernakuler/2.jpg'] },
+        { title: 'KARSA VI HMJTA UINAM PERIODE 2025', date: '2025-11-02', images: ['assets/album/KARSA VI HMJTA UINAM PERIODE 2025/1.jpg','assets/album/KARSA VI HMJTA UINAM PERIODE 2025/2.jpg','assets/album/KARSA VI HMJTA UINAM PERIODE 2025/3.jpg'] }
+        // TAMBAHKAN ALBUM BARU DI SINI (sebelum tanda penutup ])
+        // Contoh:
+        // ,
+        // { title: 'Nama Album Baru', date: '2025-07-15', images: ['assets/album/Nama Album Baru/foto1.jpg', 'assets/album/Nama Album Baru/foto2.jpg'] }
+      ];
+
+      // Urutkan album berdasarkan tanggal (terbaru ke terlama)
+      albums.sort((a, b) => {
+        const dateA = new Date(a.date || 0);
+        const dateB = new Date(b.date || 0);
+        return dateB - dateA; // Descending: terbaru di atas
+      });
+
+      const render = (items) => {
+        if (!items || items.length === 0) {
+          listEl.innerHTML = '<div class="empty">Album belum tersedia.</div>';
+          return;
+        }
+        listEl.innerHTML = '';
+        items.forEach(item => {
+          const card = document.createElement('article');
+          card.className = 'album-card';
+          const date = item.date ? new Date(item.date).toLocaleDateString('id-ID', { day: '2-digit', month: 'long', year: 'numeric' }) : '';
+          const images = item.images && item.images.length ? item.images : [];
+          // Take up to 3 images for the stack
+          const stackImages = images.slice(0, 3);
+          // If less than 3 images, duplicate the last one or use placeholder
+          while (stackImages.length < 3 && stackImages.length > 0) {
+            stackImages.push(stackImages[stackImages.length - 1]);
+          }
+          const placeholderImg = 'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=800&q=80';
+          
+          let stackHTML = '';
+          if (stackImages.length >= 3) {
+            stackHTML = `
+              <img src="${stackImages[0]}" alt="${item.title}">
+              <img src="${stackImages[1]}" alt="${item.title}">
+              <img src="${stackImages[2]}" alt="${item.title}">
+            `;
+          } else if (stackImages.length > 0) {
+            stackHTML = stackImages.map(img => `<img src="${img}" alt="${item.title}">`).join('');
+          } else {
+            stackHTML = `
+              <img src="${placeholderImg}" alt="${item.title}">
+              <img src="${placeholderImg}" alt="${item.title}">
+              <img src="${placeholderImg}" alt="${item.title}">
+            `;
+          }
+          
+          card.innerHTML = `
+            <div class="album-thumb">
+              <div class="album-stack">
+                ${stackHTML}
+              </div>
+            </div>
+            <div class="album-info">
+              <div class="album-title">${item.title}</div>
+              <div class="album-meta">${date}</div>
+            </div>
+          `;
+          listEl.appendChild(card);
+        });
+      };
+
+      render(albums);
+
+      // Lightbox handlers
+      let currentGallery = [];
+      let currentIndex = 0;
+
+      const showSlide = (idx) => {
+        if (!currentGallery.length) return;
+        currentIndex = (idx + currentGallery.length) % currentGallery.length;
+        const img = currentGallery[currentIndex];
+        lightboxImg.src = img.src;
+        lightboxImg.alt = img.alt || '';
+      };
+
+      const openLightbox = (gallery) => {
+        currentGallery = gallery || [];
+        currentIndex = 0;
+        showSlide(0);
+        lightbox.classList.add('is-visible');
+      };
+      const closeLightbox = () => {
+        lightbox.classList.remove('is-visible');
+        currentGallery = [];
+        lightboxImg.src = '';
+        lightboxImg.alt = '';
+      };
+
+      listEl.addEventListener('click', (e) => {
+        // Click anywhere on album-thumb or album-stack should open lightbox
+        const thumb = e.target.closest('.album-thumb');
+        const stack = e.target.closest('.album-stack');
+        if (!thumb && !stack) return;
+        const card = e.target.closest('.album-card');
+        const index = Array.from(listEl.children).indexOf(card);
+        const album = albums[index];
+        if (!album) return;
+        const gallery = (album.images || []).map(src => ({ src, alt: album.title }));
+        if (!gallery.length) return;
+        openLightbox(gallery);
+      });
+      lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox || e.target === closeBtn) {
+          closeLightbox();
+        }
+      });
+      prevBtn.addEventListener('click', (e) => { e.stopPropagation(); showSlide(currentIndex - 1); });
+      nextBtn.addEventListener('click', (e) => { e.stopPropagation(); showSlide(currentIndex + 1); });
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closeLightbox();
+        if (e.key === 'ArrowRight') showSlide(currentIndex + 1);
+        if (e.key === 'ArrowLeft') showSlide(currentIndex - 1);
+      });
+    })();
+  </script>
+</body>
+</html>

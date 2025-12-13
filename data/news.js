@@ -1,0 +1,188 @@
+// Data berita untuk HMJTA UINAM
+// File ini bisa digunakan langsung tanpa server HTTP
+const newsData = [
+  {
+    "id": 1,
+    "title": "[ARSITEKTUR BERBAGI]",
+    "date": "2025-09-01",
+    "excerpt": "Himpunan Mahasiswa Jurusan Teknik Arsitektur berkolaborasi dengan Dompet Dhuafa mengadakan program qurban untuk didistribusikan kepada mereka yang membutuhkan.",
+    "image": "assets/news/ARSITEKTUR BERBAGI DAGING KURBAN/kurban.jpg",
+    "content": "Himpunan Mahasiswa Jurusan Teknik Arsitektur berkolaborasi dengan Dompet Dhuafa mengadakan program qurban untuk didistribusikan kepada mereka yang membutuhkan.\n\nTapi, apa sih tujuan Qurban?\n\nTujuan Kurban bukan sekadar memenuhi kewajiban syariat, melainkan juga sarana untuk mendekatkan diri kepada Allah, mengasah kepedulian sosial, dan meneladani ketakwaan Nabi Ibrahim AS.\n\nRasulullah SAW bersabda:\n\"Hari-hari (Idul Adha) itu adalah hari makan, minum, dan berdzikir kepada Allah.\" (HR. Muslim).\n\nTujuan Kurban dalam hal ini adalah memupuk rasa solidaritas dan kepedulian terhadap sesama. Pembagian daging kurban menjadi simbol bahwa rezeki yang kita miliki harus dibagi dengan orang lain.\n\nJadi, Mari berbagi kebaikan dan keberkahan dengan berqurban bersama kami!\n\nYuk kita patungan berdonasi Kurban untuk saudara-saudara kita di pelosok negeri, bersama HMJTA dan Dompet Dhuafa, lewat link berikut:\nhttps://bit.ly/HMJTAUINAMBerkurban\n\nInformasi Donasi\n\n• Metode pembayaran:\n- BSI 7302475479 a.n HMJTA UNAM"
+  },
+  {
+    "id": 2,
+    "title": "[ARSITEKTUR BERBAGI]",
+    "date": "2025-03-21",
+    "excerpt": "HMJTA UINAM Periode 2025 sukses mengadakan kegiatan \"Arsitektur Berbagi\" untuk menumbuhkan rasa kepedulian sosial di Bundaran Samata dan Panti Asuhan Al-Ikhsan.",
+    "image": "assets/news/ARSITEKTUR BERBAGI/bagi takjil.jpg",
+    "content": "Jumat, 21 Maret 2025 - Himpunan Mahasiswa Jurusan Teknik Arsitektur (HMJTA) UIN Alauddin Makassar (UINAM) Periode 2025 telah sukses mengadakan kegiatan \"Arsitektur Berbagi\" yang bertujuan menumbuhkan rasa kepedulian sosial. Kegiatan ini dilaksanakan di dua lokasi: bagian pertama adalah pembagian takjil kepada warga dan pengendara di sekitar Bundaran Samata.\n\n<img src=\"assets/news/arsitektur-berbagi-takjil.jpg\" alt=\"Pembagian takjil di Bundaran Samata\" style=\"width: 100%; max-width: 800px; height: auto; border-radius: 12px; margin: 20px 0; box-shadow: 0 4px 12px rgba(0,0,0,0.1); display: block; margin-left: auto; margin-right: auto;\">\n\nSelanjutnya, para pengurus dan anggota HMJTA melanjutkan ke Panti Asuhan Al-Ikhsan yang terletak di Jalan Bontotangna untuk membagikan sembako dan kebutuhan dasar.\n\n<img src=\"assets/news/arsitektur-berbagi-panti.jpg\" alt=\"Pembagian sembako di Panti Asuhan Al-Ikhsan\" style=\"width: 100%; max-width: 800px; height: auto; border-radius: 12px; margin: 20px 0; box-shadow: 0 4px 12px rgba(0,0,0,0.1); display: block; margin-left: auto; margin-right: auto;\">\n\nSelain memberikan bantuan material, peserta juga berinteraksi dengan anak-anak panti melalui permainan dan percakapan hangat. Kegiatan \"Arsitektur Berbagi\" ini merupakan wujud komitmen HMJTA UINAM Periode 2025 untuk tidak hanya fokus pada akademik dan keterampilan arsitektur, tetapi juga berperan aktif dalam memberikan kontribusi positif bagi masyarakat sekitar."
+  },
+  {
+    "id": 3,
+    "title": "[ARSITEKTUR BERBAGI DAGING KURBAN]",
+    "date": "2025-06-07",
+    "excerpt": "Kegiatan kurban HMJTA Periode 2025 dilaksanakan pada Sabtu, 7 Juni 2025 pukul 08.00-12.00 WITA di Kampung Nelayan Kab. Gowa. Kurban HMJTA bekerja sama dengan Dompet Dhuafa,",
+    "image": "assets/news/ARSITEKTUR BERBAGI DAGING KURBAN/21.png",
+    "content": "Kegiatan kurban HMJTA Periode 2025 dilaksanakan pada Sabtu, 7 Juni 2025 pukul 08.00-12.00 WITA di Kampung Nelayan Kab. Gowa. Kurban HMJTA bekerja sama dengan Dompet Dhuafa, diikuti proses sembelih ekor sapi sesuai syariat, pemisahan daging, dan pembagian kepada keluarga kurang mampu.\n\n<img src=\"assets/news/ARSITEKTUR BERBAGI DAGING KURBAN/21.png\" alt=\"Proses sembelih ekor sapi\" style=\"width: 100%; max-width: 800px; height: auto; border-radius: 12px; margin: 20px 0; box-shadow: 0 4px 12px rgba(0,0,0,0.1); display: block; margin-left: auto; margin-right: auto;\">\n\nDiikuti oleh pengurus dan anggota HMJTA serta Dompet Dhuafa. Kegiatan ini bertujuan memeriahkan Idul Adha, menumbuhkan gotong-royong, dan memberikan manfaat nyata."
+  },
+  {
+    "id": 4,
+    "title": "HARI KARTINI",
+    "date": "2025-04-21",
+    "excerpt": "Raden Ajeng Kartini, juga dikenal sebagai Raden Ayu Kartini (21 April 1879 – 17 September 1904) adalah seorang tokoh Pahlawan Nasional Indonesia. Kartini adalah seorang pejuang kemerdekaan dan kedudukan kaumnya. Ia mempunyai tanggal lahir yang sama seperti dr. K.R.T. Radjiman Wedyodiningrat, yakni sama-sama lahir pada 21 April 1879.",
+    "image": "assets/news/HARI KARTINI/1.jpg",
+    "content": "Raden Ajeng Kartini, juga dikenal sebagai Raden Ayu Kartini (21 April 1879 – 17 September 1904) adalah seorang tokoh Pahlawan Nasional Indonesia. Kartini adalah seorang pejuang kemerdekaan dan kedudukan kaumnya. Ia mempunyai tanggal lahir yang sama seperti dr. K.R.T. Radjiman Wedyodiningrat, yakni sama-sama lahir pada 21 April 1879.\n\nIa dilahirkan dalam keluarga bangsawan Jawa di Hindia Belanda (sekarang Indonesia). Setelah bersekolah di sekolah dasar berbahasa Belanda, ia ingin melanjutkan pendidikan lebih lanjut, tetapi perempuan Jawa saat itu dilarang mengenyam pendidikan tinggi. Ia bertemu dengan berbagai pejabat dan orang berpengaruh, termasuk J.H. Abendanon, yang bertugas melaksanakan Kebijakan Etis Belanda.\n\nSetelah kematiannya, saudara perempuannya melanjutkan pembelaannya untuk mendidik anak perempuan dan perempuan. Surat-surat Kartini diterbitkan di sebuah majalah Belanda dan akhirnya, pada tahun 1911, menjadi karya: Habis Gelap Terbitlah Terang, Kehidupan Perempuan di Desa, dan Surat-Surat Putri Jawa. Ulang tahunnya sekarang dirayakan di Indonesia sebagai Hari Kartini untuk menghormatinya, serta beberapa sekolah dinamai menurut namanya dan sebuah yayasan didirikan atas namanya untuk membiayai pendidikan anak perempuan bangsa Indonesia.\"\n\nInstagram: @hmjta_uinam\n<br>YouTube: HMJ Teknik Arsitektur UINAM\n\n#HMJTA2025\n<br>#TeknikArsitektur\n<br>#BravoArsitektur"
+  },
+  {
+    "id": 5,
+    "title": "HARI BUMI",
+    "date": "2025-04-22",
+    "excerpt": "\"Hari Bumi adalah perayaan tahunan yang menghormati pencapaian gerakan lingkungan dan meningkatkan kesadaran akan perlunya melindungi sumber daya alam Bumi untuk generasi mendatang . Hari Bumi dirayakan pada tanggal 22 April di seluruh dunia.\"",
+    "image": "assets/news/HARI BUMI/1.jpg",
+    "content": "\"Hari Bumi adalah perayaan tahunan yang menghormati pencapaian gerakan lingkungan dan meningkatkan kesadaran akan perlunya melindungi sumber daya alam Bumi untuk generasi mendatang . Hari Bumi dirayakan pada tanggal 22 April di seluruh dunia.\"\n\nInstagram: @hmjta_uinam\n<br>YouTube: HMJ Teknik Arsitektur UINAM\n\n#HMJTA2025\n<br>#TeknikArsitektur\n<br>#BravoArsitektur"
+  },
+  {
+    "id": 6,
+    "title": "HARI BUKU SEDUNIA",
+    "date": "2025-04-23",
+    "excerpt": "\"Buku bagaikan jendela menuju dunia lain dengan setiap halaman baru, buku memperkenalkan kita pada orang-orang baru, budaya baru, dan ide-ide baru. Setiap tahun, pada tanggal 23 April, UNESCO merayakan Hari Buku dan Hak Cipta Sedunia untuk mengakui kekuatan buku sebagai jembatan antar generasi dan lintas budaya.",
+    "image": "assets/news/HARI BUKU SEDUNIA/1.jpg",
+    "content": "\"Buku bagaikan jendela menuju dunia lain dengan setiap halaman baru, buku memperkenalkan kita pada orang-orang baru, budaya baru, dan ide-ide baru. Setiap tahun, pada tanggal 23 April, UNESCO merayakan Hari Buku dan Hak Cipta Sedunia untuk mengakui kekuatan buku sebagai jembatan antar generasi dan lintas budaya.\n\nTanggal ini memiliki simbolisme yang sangat besar dalam sastra dunia, menandai kematian beberapa penulis terkenal, termasuk William Shakespeare, Miguel de Cervantes, dan Inca Garcilaso de la Vega\".\n\nInstagram: @hmjta_uinam\n<br>YouTube: HMJ Teknik Arsitektur UINAM\n\n#HMJTA2025\n<br>#TeknikArsitektur\n<br>#BravoArsitektur"
+  },
+  {
+    "id": 7,
+    "title": "SELAMAT HARI BURUH",
+    "date": "2025-05-01",
+    "excerpt": "\"Peringatan Hari Buruh lahir dari sebuah aksi demonstrasi. Peristiwa ini terjadi pada 1 Mei 1886 di Chicago, Amerika Serikat. Pada saat itu, para buruh menuntut pengurangan jam kerja yang awalnya 10 hingga 16 jam sehari  menjadi 8 jam sehari. Peristiwa tersebut dikenal sebagai Haymarket Affair. Peristiwa ini kemudian menjadi titik balik bagi perjuangan buruh global.",
+    "image": "assets/news/HARI BURUH/1.jpg",
+    "content": "\"Peringatan Hari Buruh lahir dari sebuah aksi demonstrasi. Peristiwa ini terjadi pada 1 Mei 1886 di Chicago, Amerika Serikat. Pada saat itu, para buruh menuntut pengurangan jam kerja yang awalnya 10 hingga 16 jam sehari  menjadi 8 jam sehari. Peristiwa tersebut dikenal sebagai Haymarket Affair. Peristiwa ini kemudian menjadi titik balik bagi perjuangan buruh global.\n\nSebagai bentuk solidaritas dan penghormatan, Konferensi Sosialis Internasional di Paris pada 1889 menetapkan 1 Mei sebagai Hari Buruh Internasional. Di Indonesia, Hari Buruh Internasional dimulai sejak 1 Mei 1918 oleh serikat buruh Kung Tang Hwee di Semarang. Banyak tuntutan diajukan oleh para buruh di Indonesia untuk mencapai kesejahteraan bekerja, mulai dari jam kerja yang wajar, upah layak, dan lainnya. Peringatan Hari Buruh ini terus diperingati hingga saat ini untuk memperjuangkan hak-hak buruh.\"\n\nSelamat Memperingati Hari Buruh!\n\n————————————\nIkuti terus informasi seputar HMJTA UINAM di:\n\nOfficial Account HMJTA UINAM\nInstagram: @hmjta_uinam\nYoutube: HMJ Teknik Arsitektur UINAM\nEmail: hmjteknikarsitekturuinam@gmail.com\n\n#HMJTA2025\n<br>#TeknikArsitektur\n<br>#BravoArsitektur"
+  },
+  {
+    "id": 8,
+    "title": "HARI PENDIDIKAN NASIONAL",
+    "date": "2025-05-02",
+    "excerpt": "\"Hari ini, kita memperingati Hari Pendidikan Nasional, sebuah momentum untuk mengenang jasa Bapak Pendidikan Indonesia, Ki Hajar Dewantara. Melalui semboyannya yang terkenal — Ing ngarsa sung tuladha, ing madya mangun karsa, tut wuri handayani — beliau mengajarkan bahwa pendidikan bukan hanya soal ilmu, tetapi juga tentang keteladanan, dorongan, dan semangat membangun generasi yang berkarakter.",
+    "image": "assets/news/HARI PENDIDIKAN NASIONAL/1.jpg",
+    "content": "\"Hari ini, kita memperingati Hari Pendidikan Nasional, sebuah momentum untuk mengenang jasa Bapak Pendidikan Indonesia, Ki Hajar Dewantara. Melalui semboyannya yang terkenal — Ing ngarsa sung tuladha, ing madya mangun karsa, tut wuri handayani — beliau mengajarkan bahwa pendidikan bukan hanya soal ilmu, tetapi juga tentang keteladanan, dorongan, dan semangat membangun generasi yang berkarakter.\n\nPendidikan adalah jembatan masa depan. Di tengah tantangan zaman yang terus berubah, peran pendidikan menjadi semakin penting dalam membentuk insan yang tidak hanya cerdas secara intelektual, tetapi juga beretika, kreatif, dan peduli terhadap sesama. Oleh karena itu, mari kita jadikan Hari Pendidikan Nasional ini sebagai pengingat bahwa kita semua — guru, siswa, orang tua, dan masyarakat — memiliki tanggung jawab bersama dalam mencerdaskan kehidupan bangsa\".\n\nSelamat Hari Pendidikan Nasional! Mari terus menyalakan api semangat belajar dan berkarya, demi Indonesia yang lebih maju, adil, dan beradab!\n\nIkuti terus informasi seputar HMJTA UINAM di:\n\nOfficial Account HMJTA UINAM\n<br>Instagram: @hmjta_uinam\n<br>Youtube: HMJ Teknik Arsitektur UINAM\n<br>Email: hmjteknikarsitekturuinam@gmail.com\n\n#HMJTA2025\n<br>#TeknikArsitektur\n<br>#BravoArsitektur"
+  },
+  {
+    "id": 9,
+    "title": "HARI RAYA IDUL FITRI 1446 H",
+    "date": "2025-03-30",
+    "excerpt": "\"Assalamualaikum Warahmatullahi Wabarakatuh. Puji syukur kita panjatkan ke hadirat Allah SWT yang telah memberikan kita nikmat iman, islam, dan kesehatan sehingga kita dapat kembali merayakan hari besar yang penuh makna—Idul Fitri, dengan suka cita dan keikhlasan.",
+    "image": "assets/news/HARI RAYA IDUL FITRI 1446 H/1.jpg",
+    "content": "\"Assalamualaikum Warahmatullahi Wabarakatuh\n\nPuji syukur kita panjatkan ke hadirat Allah SWT yang telah memberikan kita nikmat iman, islam, dan kesehatan sehingga kita dapat kembali merayakan hari besar yang penuh makna—Idul Fitri, dengan suka cita dan keikhlasan.\n\nTaqabbalallahu minna wa minkum, shiyamana wa shiyamakum, wa kullu ‘am wa antum bikhair.\n\nWassalamu Alaikum Warahmatullahi Wabarakatuh\"\n\nIkuti terus informasi seputar HMJTA UINAM di:\n\nOfficial Account HMJTA UINAM\n<br>Instagram: @hmjta_uinam\n<br>Youtube: HMJ Teknik Arsitektur UINAM\n<br>Email: hmjteknikarsitekturuinam@gmail.com\n\n#HMJTA2025\n<br>#TeknikArsitektur\n<br>#BravoArsitektur"
+  },
+  {
+    "id": 10,
+    "title": "HARI RAYA NYEPI",
+    "date": "2025-03-29",
+    "excerpt": "\"Nyepi adalah hari suci umat Hindu yang dirayakan setiap Tahun Baru Saka. Hari ini jatuh pada hitungan Tilem Kesanga (IX) yang merupakan hari penyucian dewa-dewa yang berada di pusat samudera yang membawa intisari amerta air hidup. Untuk itu umat Hindu melakukan pemujaan suci terhadap mereka.\"",
+    "image": "assets/news/HARI RAYA NYEPI/1.jpg",
+    "content": "\"Nyepi adalah hari suci umat Hindu yang dirayakan setiap Tahun Baru Saka. Hari ini jatuh pada hitungan Tilem Kesanga (IX) yang merupakan hari penyucian dewa-dewa yang berada di pusat samudera yang membawa intisari amerta air hidup. Untuk itu umat Hindu melakukan pemujaan suci terhadap mereka\"\n\nInstagram: @hmjta_uinam\n<br>YouTube: HMJ Teknik Arsitektur UINAM\n<br>Email: hmjteknikarsitekturuinam@gmail.com\n\n#HMJTA2025\n<br>#TeknikArsitektur\n<br>#BravoArsitektur"
+  },
+  {
+    "id": 11,
+    "title": "HARI RAYA WAISAK",
+    "date": "2025-05-12",
+    "excerpt": "\"Semoga Hari Waisak ini menjadi titik balik menuju pencerahan dan kebijaksanaan sejati bagi yang merayakan\"",
+    "image": "assets/news/HARI RAYA WAISAK/1.jpg",
+    "content": "\"Semoga Hari Waisak ini menjadi titik balik menuju pencerahan dan kebijaksanaan sejati bagi yang merayakan\"\n\nIkuti terus informasi seputar HMJTA UINAM di:\n\nOfficial Account HMJTA UINAM\n<br>Instagram: @hmjta_uinam\n<br>Youtube: HMJ Teknik Arsitektur UINAM\n<br>Email: hmjteknikarsitekturuinam@gmail.com\n\n#HMJTA2025\n<br>#TeknikArsitektur\n<br>#BravoArsitektur"
+  },
+  {
+    "id": 12,
+    "title": "HARI KEBANGKITAN NASIONAL",
+    "date": "2025-05-20",
+    "excerpt": "\"Hari Kebangkitan Nasional diperingati sebagai momentum bangkitnya semangat persatuan dan kesadaran nasional bangsa Indonesia. Peristiwa ini menandai lahirnya perjuangan yang tidak lagi bersifat kedaerahan, tetapi mengutamakan kepentingan bangsa secara keseluruhan. Melalui semangat kebangkitan nasional, generasi muda diharapkan mampu meneruskan perjuangan para pendahulu dengan berkarya, berinovasi, dan menjaga persatuan demi kemajuan Indonesia\"",
+    "image": "assets/news/HARI KEBANGKITAN NASIONAL/1.jpg",
+    "content": "\"Hari Kebangkitan Nasional diperingati sebagai momentum bangkitnya semangat persatuan dan kesadaran nasional bangsa Indonesia. Peristiwa ini menandai lahirnya perjuangan yang tidak lagi bersifat kedaerahan, tetapi mengutamakan kepentingan bangsa secara keseluruhan. Melalui semangat kebangkitan nasional, generasi muda diharapkan mampu meneruskan perjuangan para pendahulu dengan berkarya, berinovasi, dan menjaga persatuan demi kemajuan Indonesia\"\n\nIkuti terus informasi seputar HMJTA UINAM di:\n\nOfficial Account HMJTA UINAM\n<br>Instagram: @hmjta_uinam\n<br>Youtube: HMJ Teknik Arsitektur UINAM\n<br>Email: hmjteknikarsitekturuinam@gmail.com\n\n#HMJTA2025\n<br>#TeknikArsitektur\n<br>#BravoArsitektur"
+  },
+  {
+    "id": 13,
+    "title": "HARI LAHIR PANCASILA",
+    "date": "2025-06-01",
+    "excerpt": "\"1 Juni 1945, bukan hanya sekadar tanggal, tapi menyimpan makna mendalam. Lahirnya Pancasila menandai tonggak sejarah penting bagi Indonesia. Bung Karno memproklamasikan lima dasar negara ini, hasil rumusan dan perdebatan panjang, menjadi landasan bagi Indonesia yang merdeka. Mari kita lestarikan dan amalkan nilai-nilai pancasila dalam kehidupan sehari-hari.\"",
+    "image": "assets/news/HARI LAHIR PANCASILA/1.jpg",
+    "content": "\"1 Juni 1945, bukan hanya sekadar tanggal, tapi menyimpan makna mendalam. Lahirnya Pancasila menandai tonggak sejarah penting bagi Indonesia. Bung Karno memproklamasikan lima dasar negara ini, hasil rumusan dan perdebatan panjang, menjadi landasan bagi Indonesia yang merdeka. Mari kita lestarikan dan amalkan nilai-nilai pancasila dalam kehidupan sehari-hari\"\n\nIkuti terus informasi seputar HMJTA UINAM di:\n\nOfficial Account HMJTA UINAM\n<br>Instagram: @hmjta_uinam\n<br>Youtube: HMJ Teknik Arsitektur UINAM\n<br>Email: hmjteknikarsitekturuinam@gmail.com\n\n#HMJTA2025\n<br>#TeknikArsitektur\n<br>#BravoArsitektur"
+  },
+  {
+    "id": 14,
+    "title": "HARI RAYA IDUL ADHA 1446 H",
+    "date": "2025-06-06",
+    "excerpt": "Assalamualaikum Warahmatullahi Wabarakatuh. Puji syukur kita panjatkan ke hadirat Allah SWT yang telah memberikan kita nikmat iman, islam, dan kesehatan sehingga kita dapat kembali merayakan hari besar yang penuh makna—Idul Adha, Hari Raya Kurban, dengan suka cita dan keikhlasan.",
+    "image": "assets/news/HARI RAYA IDUL ADHA 1446 H/1.jpg",
+    "content": "Assalamualaikum Warahmatullahi Wabarakatuh\n\nPuji syukur kita panjatkan ke hadirat Allah SWT yang telah memberikan kita nikmat iman, islam, dan kesehatan sehingga kita dapat kembali merayakan hari besar yang penuh makna—Idul Adha, Hari Raya Kurban, dengan suka cita dan keikhlasan.\n\nTaqabbalallahu minna wa minkum, shiyamana wa shiyamakum, wa kullu ‘am wa antum bikhair.\n\nWassalamu Alaikum Warahmatullahi Wabarakatuh\"\n\nIkuti terus informasi seputar HMJTA UINAM di:\n\nOfficial Account HMJTA UINAM\n<br>Instagram: @hmjta_uinam\n<br>Youtube: HMJ Teknik Arsitektur UINAM\n<br>Email: hmjteknikarsitekturuinam@gmail.com\n\n#HMJTA2025\n<br>#TeknikArsitektur\n<br>#BravoArsitektur"
+  },
+  {
+    "id": 15,
+    "title": "TAHUN BARU ISLAM 1447 H",
+    "date": "2025-06-27",
+    "excerpt": "Assalamualaikum Warahmatullahi Wabarakatuh\n\n\"1 Muharram tanda awal tahun baru dalam kalender Hijriah. Mari kita sambut tahun baru ini dengan penuh harapan dan tekad untuk menjadi pribadi yang lebih baik, serta senantiasa bersyukur atas segala nikmat yang telah Allah SWT berikan.\"",
+    "image": "assets/news/TAHUN BARU ISLAM 1447 H/1.jpg",
+    "content": "Assalamualaikum Warahmatullahi Wabarakatuh\n\n\"1 Muharram tanda awal tahun baru dalam kalender Hijriah. Mari kita sambut tahun baru ini dengan penuh harapan dan tekad untuk menjadi pribadi yang lebih baik, serta senantiasa bersyukur atas segala nikmat yang telah Allah SWT berikan.\"\n\nWassalamu Alaikum Warahmatullahi Wabarakatuh\n\nIkuti terus informasi seputar HMJTA UINAM di:\n\nOfficial Account HMJTA UINAM\n<br>Instagram: @hmjta_uinam\n<br>Youtube: HMJ Teknik Arsitektur UINAM\n<br>Email: hmjteknikarsitekturuinam@gmail.com\n\n#HMJTA2025\n<br>#TeknikArsitektur\n<br>#BravoArsitektur"
+  },
+  {
+    "id": 16,
+    "title": "DIRGAHAYU REPUBLIK INDONESIA KE-80",
+    "date": "2025-08-17",
+    "excerpt": "80 tahun lalu, proklamasi kemerdekaan dikumandangkan. Sebuah janji untuk membangun negeri yang berdaulat, adil, dan makmur. Hari ini, kita berdiri di atas pundak para pahlawan, mewarisi semangat juang yang tak pernah padam. Mari kita teruskan perjuangan mereka, dengan karya nyata dan cinta yang mendalam untuk Indonesia.",
+    "image": "assets/news/DIRGAHAYU REPUBLIK INDONESIA KE-80/1.jpg",
+    "content": "80 tahun lalu, proklamasi kemerdekaan dikumandangkan. Sebuah janji untuk membangun negeri yang berdaulat, adil, dan makmur. Hari ini, kita berdiri di atas pundak para pahlawan, mewarisi semangat juang yang tak pernah padam. Mari kita teruskan perjuangan mereka, dengan karya nyata dan cinta yang mendalam untuk Indonesia.\n\nDirgahayu Republik Indonesia Ke-80. Merdeka!🇮🇩✊🏼\n\nInstagram: @hmjta_uinam\n<br>Youtube: HMJ Teknik Arsitektur UINAM\n<br>Email: hmjteknikarsitekturuinam@gmail.com\n\n#HMJTA2025\n<br>#TeknikArsitektur\n<br>#BravoArsitektur"
+  },
+  {
+    "id": 17,
+    "title": "MAULID NABI MUHAMMAD SAW 1447 H",
+    "date": "2025-09-05",
+    "excerpt": "Dalam setiap langkah, jejakmu adalah teladan. Dalam setiap kata, nasihatmu adalah pedoman. Semoga semangat Maulid Nabi menginspirasi kita untuk menjadi pribadi yang lebih baik, menebarkan kasih sayang, dan membawa harapan bagi sesama.",
+    "image": "assets/news/MAULID NABI MUHAMMAD SAW/1.jpg",
+    "content": "Dalam setiap langkah, jejakmu adalah teladan. Dalam setiap kata, nasihatmu adalah pedoman. Semoga semangat Maulid Nabi menginspirasi kita untuk menjadi pribadi yang lebih baik, menebarkan kasih sayang, dan membawa harapan bagi sesama.🌙✨\n\n\"Dan kami tidak mengutus engkau (Muhammad) melainkan untuk (menjadi) rahmat bagi seluruh alam semesta.\" Q.S. Al-Anbiya: 107\n\nIkuti terus informasi seputar HMJTA UINAM\n\nInstagram: @hmjta_uinam\n<br>Youtube: HMJ Teknik Arsitektur UINAM\n<br>Email: hmjteknikarsitekturuinam@gmail.com\n\n#HMJTA2025\n<br>#TeknikArsitektur\n<br>#BravoArsitektur"
+  },
+  {
+    "id": 18,
+    "title": "HARI KESAKTIAN PANCASILA",
+    "date": "2025-10-01",
+    "excerpt": "\"Hari Kesaktian Pancasila diperingati setiap tanggal 1 Oktober sebagai pengingat akan kuatnya ideologi Pancasila dalam menghadapi berbagai ancaman. Peringatan ini menjadi momentum untuk mengenang jasa para pahlawan yang telah gugur demi mempertahankan dasar negara. Melalui peringatan Hari Kesaktian Pancasila, seluruh rakyat Indonesia diajak untuk meneguhkan kembali nilai-nilai Pancasila sebagai pedoman dalam kehidupan berbangsa dan bernegara\"",
+    "image": "assets/news/HARI KESAKTIAN PANCASILA/1.jpg",
+    "content": "\"Hari Kesaktian Pancasila diperingati setiap tanggal 1 Oktober sebagai pengingat akan kuatnya ideologi Pancasila dalam menghadapi berbagai ancaman. Peringatan ini menjadi momentum untuk mengenang jasa para pahlawan yang telah gugur demi mempertahankan dasar negara. Melalui peringatan Hari Kesaktian Pancasila, seluruh rakyat Indonesia diajak untuk meneguhkan kembali nilai-nilai Pancasila sebagai pedoman dalam kehidupan berbangsa dan bernegara\"\n\nIkuti terus informasi seputar HMJTA UINAM di:\n\nOfficial Account HMJTA UINAM\n<br>Instagram: @hmjta_uinam\n<br>Youtube: HMJ Teknik Arsitektur UINAM\n<br>Email: hmjteknikarsitekturuinam@gmail.com\n\n#HMJTA2025\n<br>#TeknikArsitektur\n<br>#BravoArsitektur"
+  },
+  {
+    "id": 19,
+    "title": "HARI BATIK NASIONAL",
+    "date": "2025-10-02",
+    "excerpt": "\"Dari sehelai kain batik, terpancar keagungan Indonesia. Setiap motif adalah doa, setiap warna adalah harapan. Mari jadikan Hari Batik momentum untuk terus mencintai dan menjaga kekayaan budaya kita.\"",
+    "image": "assets/news/HARI BATIK NASIONAL/1.jpg",
+    "content": "\"Dari sehelai kain batik, terpancar keagungan Indonesia. Setiap motif adalah doa, setiap warna adalah harapan. Mari jadikan Hari Batik momentum untuk terus mencintai dan menjaga kekayaan budaya kita.\"\n\nbaca selengkapnya: \nhttps://www.instagram.com/p/DPSs3l2k-AB/?img_index=3&igsh=enQxcm1xNjV3b2E1\n\nInstagram: @hmjta_uinam\n<br>Youtube: HMJ Teknik Arsitektur UINAM\n<br>Email: hmjteknikarsitekturuinam@gmail.com\n\n#HMJTA2025\n<br>#TeknikArsitektur\n<br>#BravoArsitektur"
+  },  
+  {
+    "id": 20,
+    "title": "[MENGENANG TRAGEDI G30S/PKI]",
+    "date": "2025-09-30",
+    "excerpt": "\"Peristiwa Gerakan 30 September 1965 (G30S/PKI) merupakan salah satu tragedi kelam dalam sejarah bangsa Indonesia. Peristiwa ini ditandai dengan penculikan dan pembunuhan tujuh perwira TNI Angkatan Darat yang bertujuan mengguncang stabilitas negara. PKI mendatangi kediaman Jenderal TNI Ahmad Yani, Letnan Jenderal TNI R. Soeprapto, Letnan Jenderal TNI S. Parman, Mayor Jenderal TNI M.T Haryono, Mayor Jenderal TNI D.I Pandjaitan, Mayor Jenderal TNI Sutoyo Siswomiharjo, dan Jenderal A.H. Nasution.",
+    "image": "assets/news/TRAGEDI G30S/1.jpg",
+    "content": "\"Peristiwa Gerakan 30 September 1965 (G30S/PKI) merupakan salah satu tragedi kelam dalam sejarah bangsa Indonesia. Peristiwa ini ditandai dengan penculikan dan pembunuhan tujuh perwira TNI Angkatan Darat yang bertujuan mengguncang stabilitas negara. PKI mendatangi kediaman Jenderal TNI Ahmad Yani, Letnan Jenderal TNI R. Soeprapto, Letnan Jenderal TNI S. Parman, Mayor Jenderal TNI M.T Haryono, Mayor Jenderal TNI D.I Pandjaitan, Mayor Jenderal TNI Sutoyo Siswomiharjo, dan Jenderal A.H. Nasution.\n\nPKI berdalih sebagai Cakrabirawa, pasukan pengawal istana yang diperintahkan untuk menjemput mereka agar menghadap ke Presiden Soekarno.\n\nR. Soeprapto, Sutoyo Siswomiharjo, dan S. Parman ikut dengan ajakan PKI dalam keadaan hidup. Begitu juga dengan Kapten Czi Pierre Andreas Tendean yang menjadi korban salah tangkap karena tengah berada di kediaman A.H. Nasution yang berhasil selamat dari gerakan ini.\n\nKeempat anggota TNI AD dibawa ke sebuah markas di kawasan Pondok Gede, Jakarta Timur. Begitu sampai, keempatnya dibunuh dan mayat mereka dimasukkan ke sebuah sumur tua yang tak terpakai dengan diameter 75 cm dan kedalaman 12 meter.\n\nAhmad Yani, M.T Haryono, dan D.I Pandjaitan ditembak di kediaman masing-masing, lalu mayatnya dibawa ke markas tersebut dan juga dimasukkan ke dalam lubang yang kemudian dikenal sebagai Lubang Buaya.\n\nG30S PKI menyebar ke berbagai wilayah di Indonesia seperti Yogyakarta dan sekitar Jawa.\n\nKejadian tersebut menimbulkan dampak besar terhadap kehidupan politik, sosial, dan keamanan nasional. Tragedi G30S/PKI menjadi pengingat penting bagi bangsa Indonesia untuk selalu menjaga persatuan, kewaspadaan, serta mengamalkan nilai-nilai Pancasila dalam kehidupan berbangsa dan bernegara\"\n\nIkuti terus informasi seputar HMJTA UINAM di:\n\nOfficial Account HMJTA UINAM\n<br>Instagram: @hmjta_uinam\n<br>Youtube: HMJ Teknik Arsitektur UINAM\n<br>Email: hmjteknikarsitekturuinam@gmail.com\n\n#HMJTA2025\n<br>#TeknikArsitektur\n<br>#BravoArsitektur" 
+  },
+  {
+    "id": 21,
+    "title": "HARI DIWALI",
+    "date": "2025-10-21",
+    "excerpt": "\"Hari Diwali merupakan perayaan penting bagi umat Hindu yang melambangkan kemenangan cahaya atas kegelapan serta kebaikan atas kejahatan. Diwali menjadi momen untuk membersihkan diri, mempererat hubungan keluarga, dan menumbuhkan harapan baru. Cahaya lampu yang dinyalakan saat Diwali mengandung makna spiritual sebagai simbol kedamaian, kebijaksanaan, dan semangat menjalani hidup dengan penuh kebaikan\"",
+    "image": "assets/news/HARI DIWALI/1.jpg",
+    "content": "\"Hari Diwali merupakan perayaan penting bagi umat Hindu yang melambangkan kemenangan cahaya atas kegelapan serta kebaikan atas kejahatan. Diwali menjadi momen untuk membersihkan diri, mempererat hubungan keluarga, dan menumbuhkan harapan baru. Cahaya lampu yang dinyalakan saat Diwali mengandung makna spiritual sebagai simbol kedamaian, kebijaksanaan, dan semangat menjalani hidup dengan penuh kebaikan\"\n\nIkuti terus informasi seputar HMJTA UINAM di:\n\nOfficial Account HMJTA UINAM\n<br>Instagram: @hmjta_uinam\n<br>Youtube: HMJ Teknik Arsitektur UINAM\n<br>Email: hmjteknikarsitekturuinam@gmail.com\n\n#HMJTA2025\n<br>#TeknikArsitektur\n<br>#BravoArsitektur"
+  },
+  {
+    "id": 22,
+    "title": "HARI SUMPAH PEMUDA",
+    "date": "2025-10-28",
+    "excerpt": "\"Tanggal 28 Oktober adalah momentum penting bagi bangsa Indonesia. Di hari ini, kita memperingati Sumpah Pemuda, sebuah ikrar yang mengikat kita sebagai satu bangsa, satu tanah air, dan satu bahasa. Mari kita jadikan semangat Sumpah Pemuda sebagai kekuatan untuk menghadapi tantangan zaman, dengan berbekal ilmu pengetahuan, teknologi, dan karakter yang kuat.\"",
+    "image": "assets/news/HARI SUMPAH PEMUDA/1.jpg",
+    "content": "Tanggal 28 Oktober adalah momentum penting bagi bangsa Indonesia. Di hari ini, kita memperingati Sumpah Pemuda, sebuah ikrar yang mengikat kita sebagai satu bangsa, satu tanah air, dan satu bahasa. Mari kita jadikan semangat Sumpah Pemuda sebagai kekuatan untuk menghadapi tantangan zaman, dengan berbekal ilmu pengetahuan, teknologi, dan karakter yang kuat.\n\nbaca selengkapnya⬇: \nhttps://www.instagram.com/p/DQVvqJKk7LM/?igsh=MWwweWJ2ZDdtMHg2OQ==\n\nInstagram: @hmjta_uinam\n<br>Youtube: HMJ Teknik Arsitektur UINAM\n<br>Email: hmjteknikarsitekturuinam@gmail.com\n\n#HMJTA2025\n<br>#TeknikArsitektur\n<br>#BravoArsitektur"
+  },
+  {
+    "id": 23,
+    "title": "HARI PAHLAWAN NASIONAL",
+    "date": "2025-11-10",
+    "excerpt": "\"Hari Pahlawan diperingati setiap 10 November sebagai momen untuk mengenang keberanian para pejuang yang rela mengorbankan jiwa dan raga demi mempertahankan kemerdekaan Indonesia. Pertempuran Surabaya tahun 1945 menjadi simbol semangat perlawanan yang pantang menyerah, menunjukkan bahwa persatuan dan keberanian mampu menghadapi kekuatan apa pun. Hari ini, kita meneruskan semangat kepahlawanan itu dengan berkontribusi melalui tindakan nyata, bekerja dengan integritas, dan menjaga persatuan bangsa agar cita-cita para pahlawan tetap hidup dalam kehidupan kita sehari-hari.\"",
+    "image": "assets/news/HARI PAHLAWAN NASIONAL/1.jpg",
+    "content": "\"Hari Pahlawan diperingati setiap 10 November sebagai momen untuk mengenang keberanian para pejuang yang rela mengorbankan jiwa dan raga demi mempertahankan kemerdekaan Indonesia. Pertempuran Surabaya tahun 1945 menjadi simbol semangat perlawanan yang pantang menyerah, menunjukkan bahwa persatuan dan keberanian mampu menghadapi kekuatan apa pun. Hari ini, kita meneruskan semangat kepahlawanan itu dengan berkontribusi melalui tindakan nyata, bekerja dengan integritas, dan menjaga persatuan bangsa agar cita-cita para pahlawan tetap hidup dalam kehidupan kita sehari-hari.\"\n\nIkuti terus informasi seputar HMJTA UINAM di:\n\nOfficial Account HMJTA UINAM\n<br>Instagram: @hmjta_uinam\n<br>Youtube: HMJ Teknik Arsitektur UINAM\n<br>Email: hmjteknikarsitekturuinam@gmail.com\n\n#HMJTA2025\n<br>#TeknikArsitektur\n<br>#BravoArsitektur"
+  }
+];

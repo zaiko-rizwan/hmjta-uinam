@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Berita - HMJTA UINAM</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #4D121B;
+      --primary-dark: #591119;
+      --secondary: #C6B7A3;
+      --white: #FFFFFF;
+      --black: #000000;
+      --dark: #1d1d1d;
+      --text: #f2f2f2;
+      --muted: #b3b3b3;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: var(--white);
+      color: var(--black);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: var(--primary);
+      z-index: 20;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 14px 22px;
+      color: var(--white);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 800;
+      font-size: clamp(20px, 3vw, 32px);
+      letter-spacing: 0.4px;
+      white-space: nowrap;
+    }
+
+    .brand .logo {
+      width: 100px;
+      height: 100px;
+      border-radius: 6px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: visible;
+    }
+
+    .brand .logo::before {
+      content: "";
+      position: absolute;
+      width: 78%;
+      height: 78%;
+      background: var(--white);
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+      z-index: 0;
+    }
+
+    .brand .logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+      position: relative;
+      z-index: 1;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 24px;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    nav a {
+      padding: 6px 0;
+      position: relative;
+      transition: color 0.3s ease;
+    }
+
+    nav a.active,
+    nav a:hover {
+      color: var(--white);
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      right: 50%;
+      bottom: -6px;
+      height: 2px;
+      background: var(--white);
+      transition: left 0.4s cubic-bezier(0.4, 0, 0.2, 1), 
+                  right 0.4s cubic-bezier(0.4, 0, 0.2, 1), 
+                  opacity 0.3s ease;
+      opacity: 0;
+    }
+
+    nav a.active::after {
+      left: 0;
+      right: 0;
+      opacity: 1;
+    }
+
+    nav a:hover::after {
+      left: 0;
+      right: 0;
+      opacity: 1;
+    }
+
+    .article-hero {
+      margin-top: 80px;
+      position: relative;
+      width: 100%;
+      min-height: 400px;
+      overflow: visible;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #f5f5f5;
+      padding: 40px 20px;
+    }
+    
+    .article-hero:has(.article-hero-overlay) {
+      background: linear-gradient(135deg, #343434, #2a2a2a);
+      padding: 40px 20px;
+    }
+
+    .article-hero-image {
+      width: 100%;
+      max-width: 900px;
+      height: auto;
+      object-fit: contain;
+      display: block;
+      margin: 0 auto;
+      padding: 20px;
+      box-shadow: 0 6px 30px rgba(0, 0, 0, 0.12), 0 12px 50px rgba(0, 0, 0, 0.08);
+      border-radius: 8px;
+      background: var(--white);
+    }
+
+    .article-hero-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 50%, transparent 100%);
+      padding: 60px 22px 40px;
+      color: var(--white);
+      pointer-events: none;
+    }
+    
+    .article-hero:not(:has(.article-hero-overlay)) {
+      background: var(--white);
+    }
+
+    .article-hero-overlay h1 {
+      font-size: clamp(28px, 5vw, 42px);
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 16px;
+      max-width: 1100px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .article-hero-overlay p {
+      font-size: 16px;
+      line-height: 1.6;
+      max-width: 1100px;
+      margin-left: auto;
+      margin-right: auto;
+      opacity: 0.95;
+    }
+
+    .article-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 40px 22px;
+    }
+
+    .article-meta {
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 24px;
+    }
+
+    .article-content {
+      font-size: 16px;
+      line-height: 1.8;
+      color: #333;
+    }
+
+    .article-content p {
+      margin-bottom: 20px;
+      text-align: justify;
+    }
+
+    .article-content img {
+      width: 100%;
+      max-width: 800px;
+      height: auto;
+      border-radius: 12px;
+      margin: 20px 0;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--primary);
+      font-weight: 600;
+      text-decoration: none;
+      margin-bottom: 24px;
+      transition: color 0.2s ease;
+    }
+
+    .back-link:hover {
+      color: var(--primary-dark);
+    }
+
+    .loading {
+      text-align: center;
+      padding: 60px 22px;
+      color: var(--muted);
+    }
+
+    footer {
+      text-align: center;
+      padding: 16px;
+      background: var(--primary);
+      color: var(--white);
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.3px;
+      margin-top: 60px;
+    }
+
+    @media (max-width: 720px) {
+      nav ul {
+        gap: 16px;
+      }
+      .nav {
+        padding: 12px 16px;
+      }
+      .brand .logo {
+        width: 60px;
+        height: 60px;
+      }
+      .article-hero-image {
+        padding: 10px;
+        max-width: 95%;
+      }
+      .article-hero {
+        min-height: 300px;
+        padding: 20px 10px;
+      }
+    }
+  </style>
+  <script src="data/news.js"></script>
+</head>
+<body>
+  <header>
+    <div class="nav">
+      <div class="brand">
+        <span class="logo"><img src="assets/logo/logo hmjta.png" alt="Logo HMJTA"></span>
+        <span>HMJTA UINAM</span>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html#beranda">Beranda</a></li>
+          <li><a href="index.html#profil">Profil</a></li>
+          <li><a href="index.html#struktur">Struktur</a></li>
+          <li><a href="index.html#album">Album</a></li>
+          <li><a href="index.html#alumni">Alumni</a></li>
+          <li><a href="index.html#arsistore">Arsistore</a></li>
+          <li><a href="index.html#aspirasi">Aspirasi</a></li>
+          <li><a href="index.html#kontak">Kontak</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <div id="article-content">
+    <div class="loading">Memuat berita...</div>
+  </div>
+
+  <footer>
+    Copyright © HMJTA 2022. #ArsitekturJaya
+  </footer>
+
+  <script>
+    (function() {
+      const params = new URLSearchParams(window.location.search);
+      const newsId = params.get('id');
+      const container = document.getElementById('article-content');
+
+      if (!newsId) {
+        container.innerHTML = '<div class="loading">Berita tidak ditemukan.</div>';
+        return;
+      }
+
+      // Function to load news data
+      const loadNewsData = () => {
+        return fetch('data/news.json')
+        .then(res => res.ok ? res.json() : Promise.reject())
+          .catch(() => {
+            // Fallback to newsData from news.js if fetch fails
+            if (typeof newsData !== 'undefined') {
+              return Promise.resolve(newsData);
+            }
+            return Promise.reject();
+          });
+      };
+
+      loadNewsData()
+        .then(data => {
+          const article = data.find(item => {
+            const itemId = item.id ? item.id.toString() : item.title.toLowerCase().replace(/\s+/g, '-');
+            return itemId === newsId;
+          });
+
+          if (!article) {
+            container.innerHTML = '<div class="loading">Berita tidak ditemukan.</div>';
+            return;
+          }
+
+          const date = new Date(article.date);
+          const formattedDate = date.toLocaleDateString('id-ID', { 
+            day: '2-digit', 
+            month: 'long', 
+            year: 'numeric' 
+          });
+
+          // Check if overlay content exists (title/description in overlay)
+          const hasOverlayContent = article.overlayTitle || article.overlayDescription;
+
+          container.innerHTML = `
+            <div class="article-hero">
+              <img src="${article.image || 'https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&w=1200&q=80'}" alt="${article.title}" class="article-hero-image">
+              ${hasOverlayContent ? `
+              <div class="article-hero-overlay">
+                ${article.overlayTitle ? `<h1>${article.overlayTitle}</h1>` : ''}
+                ${article.overlayDescription ? `<p>${article.overlayDescription}</p>` : ''}
+              </div>
+              ` : ''}
+            </div>
+            <div class="article-container">
+              <a href="index.html#arsistore" class="back-link">← Kembali ke Beranda</a>
+              <div class="article-meta">Dipublikasikan pada ${formattedDate}</div>
+              <div class="article-content">
+                ${article.content.split('\n\n').map(p => {
+                  // Check if paragraph contains HTML tags (like img)
+                  if (p.trim().startsWith('<img') || p.trim().startsWith('<')) {
+                    return p; // Return HTML as-is
+                  }
+                  return `<p>${p}</p>`;
+                }).join('')}
+              </div>
+            </div>
+          `;
+        })
+        .catch(() => {
+          container.innerHTML = '<div class="loading">Gagal memuat berita. Silakan coba lagi nanti.</div>';
+        });
+    })();
+  </script>
+</body>
+</html>
+
