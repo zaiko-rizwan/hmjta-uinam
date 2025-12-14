@@ -4,7 +4,7 @@ const newsData = [
   {
     "id": 1,
     "title": "[ARSITEKTUR BERBAGI]",
-    "date": "2025-09-01",
+    "date": "2025-06-07",
     "excerpt": "Himpunan Mahasiswa Jurusan Teknik Arsitektur berkolaborasi dengan Dompet Dhuafa mengadakan program qurban untuk didistribusikan kepada mereka yang membutuhkan.",
     "image": "assets/news/ARSITEKTUR BERBAGI DAGING KURBAN/kurban.jpg",
     "content": "Himpunan Mahasiswa Jurusan Teknik Arsitektur berkolaborasi dengan Dompet Dhuafa mengadakan program qurban untuk didistribusikan kepada mereka yang membutuhkan.\n\nTapi, apa sih tujuan Qurban?\n\nTujuan Kurban bukan sekadar memenuhi kewajiban syariat, melainkan juga sarana untuk mendekatkan diri kepada Allah, mengasah kepedulian sosial, dan meneladani ketakwaan Nabi Ibrahim AS.\n\nRasulullah SAW bersabda:\n\"Hari-hari (Idul Adha) itu adalah hari makan, minum, dan berdzikir kepada Allah.\" (HR. Muslim).\n\nTujuan Kurban dalam hal ini adalah memupuk rasa solidaritas dan kepedulian terhadap sesama. Pembagian daging kurban menjadi simbol bahwa rezeki yang kita miliki harus dibagi dengan orang lain.\n\nJadi, Mari berbagi kebaikan dan keberkahan dengan berqurban bersama kami!\n\nYuk kita patungan berdonasi Kurban untuk saudara-saudara kita di pelosok negeri, bersama HMJTA dan Dompet Dhuafa, lewat link berikut:\nhttps://bit.ly/HMJTAUINAMBerkurban\n\nInformasi Donasi\n\n• Metode pembayaran:\n- BSI 7302475479 a.n HMJTA UNAM"

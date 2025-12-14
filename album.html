@@ -401,7 +401,9 @@
         { title: 'PBAK TEKNIK ARSITEKTUR 2025', date: '2025-08-29', images: ['assets/album/PBAK TEKNIK ARSITEKTUR 2025/1.jpg', 'assets/album/PBAK TEKNIK ARSITEKTUR 2025/2.jpg', 'assets/album/PBAK TEKNIK ARSITEKTUR 2025/3.jpg','assets/album/PBAK TEKNIK ARSITEKTUR 2025/4.jpg','assets/album/PBAK TEKNIK ARSITEKTUR 2025/5.jpg','assets/album/PBAK TEKNIK ARSITEKTUR 2025/6.jpg'] },  
         { title: 'Bazar & Dialog Arsitektur Neo-vernakuler oleh Kakanda Senior Dr. Ar. Ir. Zulkarnain AS, S.T., M.T., IAI', date: '2025-09-21', images: ['assets/album/Bazar & Dialog Arsitektur Neo-vernakuler oleh Kakanda Senior Dr. Ar. Ir. Zulkarnain AS, S.T., M.T., IAI/1.jpg'] },
         { title: 'Jelajah Arsitektur Neo-vernakuler', date: '2025-10-04', images: ['assets/album/Jelajah Arsitektur Neo-vernakuler/1.jpg','assets/album/Jelajah Arsitektur Neo-vernakuler/2.jpg'] },
-        { title: 'KARSA VI HMJTA UINAM PERIODE 2025', date: '2025-11-02', images: ['assets/album/KARSA VI HMJTA UINAM PERIODE 2025/1.jpg','assets/album/KARSA VI HMJTA UINAM PERIODE 2025/2.jpg','assets/album/KARSA VI HMJTA UINAM PERIODE 2025/3.jpg'] }
+        { title: 'KARSA VI HMJTA UINAM PERIODE 2025', date: '2025-11-02', images: ['assets/album/KARSA VI HMJTA UINAM PERIODE 2025/1.jpg','assets/album/KARSA VI HMJTA UINAM PERIODE 2025/2.jpg','assets/album/KARSA VI HMJTA UINAM PERIODE 2025/3.jpg'] },
+        { title: 'Arsitektur Berbagi Daging Kurban bersama Dompet Dhuafa', date: '2025-06-07', images: ['assets/album/Arsitektur-Berbagi-Daging-Kurban-bersama-Dompet-Dhuafa/1.png','assets/album/Arsitektur-Berbagi-Daging-Kurban-bersama-Dompet-Dhuafa/2.png','assets/album/Arsitektur-Berbagi-Daging-Kurban-bersama-Dompet-Dhuafa/3.png','assets/album/Arsitektur-Berbagi-Daging-Kurban-bersama-Dompet-Dhuafa/4.png','assets/album/Arsitektur-Berbagi-Daging-Kurban-bersama-Dompet-Dhuafa/5.png'] },
+        { title: 'Arsitektur Berbagi Berbagi Takjil dan Kunjungan Ke Yayasan Panti Asuhan', date: '2025-03-21', images: ['assets/album/Arsitektur Berbagi Berbagi Takjil dan Kunjungan Ke Yayasan Panti Asuhan/1.jpg','assets/album/Arsitektur Berbagi Berbagi Takjil dan Kunjungan Ke Yayasan Panti Asuhan/2.jpg','assets/album/Arsitektur Berbagi Berbagi Takjil dan Kunjungan Ke Yayasan Panti Asuhan/3.jpg','assets/album/Arsitektur Berbagi Berbagi Takjil dan Kunjungan Ke Yayasan Panti Asuhan/4.jpg','assets/album/Arsitektur Berbagi Berbagi Takjil dan Kunjungan Ke Yayasan Panti Asuhan/5.jpg','assets/album/Arsitektur Berbagi Berbagi Takjil dan Kunjungan Ke Yayasan Panti Asuhan/6.jpg','assets/album/Arsitektur Berbagi Berbagi Takjil dan Kunjungan Ke Yayasan Panti Asuhan/7.jpg','assets/album/Arsitektur Berbagi Berbagi Takjil dan Kunjungan Ke Yayasan Panti Asuhan/8.jpg','assets/album/Arsitektur Berbagi Berbagi Takjil dan Kunjungan Ke Yayasan Panti Asuhan/9.jpg'] }      
         // TAMBAHKAN ALBUM BARU DI SINI (sebelum tanda penutup ])
         // Contoh:
         // ,
@@ -434,15 +436,27 @@
           }
           const placeholderImg = 'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=800&q=80';
           
+          // Helper function to encode image paths properly
+          const encodeImagePath = (path) => {
+            // Split path and encode each part separately to handle special characters
+            // This is necessary for folders with non-breaking spaces or special Unicode chars
+            const parts = path.split('/');
+            return parts.map(part => {
+              // Encode each part completely, including spaces and special characters
+              // But keep forward slashes intact
+              return encodeURIComponent(part).replace(/%2F/g, '/');
+            }).join('/');
+          };
+          
           let stackHTML = '';
           if (stackImages.length >= 3) {
             stackHTML = `
-              <img src="${stackImages[0]}" alt="${item.title}">
-              <img src="${stackImages[1]}" alt="${item.title}">
-              <img src="${stackImages[2]}" alt="${item.title}">
+              <img src="${encodeImagePath(stackImages[0])}" alt="${item.title}" onerror="this.onerror=null; this.src='${placeholderImg}';">
+              <img src="${encodeImagePath(stackImages[1])}" alt="${item.title}" onerror="this.onerror=null; this.src='${placeholderImg}';">
+              <img src="${encodeImagePath(stackImages[2])}" alt="${item.title}" onerror="this.onerror=null; this.src='${placeholderImg}';">
             `;
           } else if (stackImages.length > 0) {
-            stackHTML = stackImages.map(img => `<img src="${img}" alt="${item.title}">`).join('');
+            stackHTML = stackImages.map(img => `<img src="${encodeImagePath(img)}" alt="${item.title}" onerror="this.onerror=null; this.src='${placeholderImg}';">`).join('');
           } else {
             stackHTML = `
               <img src="${placeholderImg}" alt="${item.title}">
@@ -502,7 +516,12 @@
         const index = Array.from(listEl.children).indexOf(card);
         const album = albums[index];
         if (!album) return;
-        const gallery = (album.images || []).map(src => ({ src, alt: album.title }));
+        // Helper function to encode image paths for lightbox
+        const encodeImagePath = (path) => {
+          const parts = path.split('/');
+          return parts.map(part => encodeURIComponent(part)).join('/');
+        };
+        const gallery = (album.images || []).map(src => ({ src: encodeImagePath(src), alt: album.title }));
         if (!gallery.length) return;
         openLightbox(gallery);
       });
