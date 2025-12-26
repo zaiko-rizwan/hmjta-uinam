@@ -1253,6 +1253,7 @@
     }
   </style>
   <script src="data/news.js"></script>
+  <script src="data/alumni.js"></script>
 </head>
 <body>
   <header>
@@ -1345,7 +1346,7 @@
             <div class="label">Angkatan 2020</div>
           </div>
           <div class="stat">
-            <div class="number">+999</div>
+            <div class="number" id="alumni-total-count">+999</div>
             <div class="label">Total</div>
           </div>
         </div>
@@ -2324,38 +2325,27 @@
 
       // Load Alumni Stats
       (function() {
-        // Data Alumni (sama dengan alumni.html)
-        // EDIT DATA DI SINI - Pastikan data sama dengan alumni.html
-        const alumni = [
-          // Template data alumni - EDIT dengan data yang sebenarnya
-          { name: 'Budi Santoso', nim: '200401001', year: 2004, email: 'budi.santoso@example.com', phone: '081234567892', job: 'Project Manager' },
-          { name: 'Dewi Lestari', nim: '200401002', year: 2004, email: 'dewi.lestari@example.com', phone: '081234567893', job: 'Designer Interior' },
-          { name: 'Muhammad Rizki', nim: '200501001', year: 2005, email: 'muhammad.rizki@example.com', phone: '081234567894', job: 'Arsitek' },
-          { name: 'Indah Permata', nim: '200501002', year: 2005, email: 'indah.permata@example.com', phone: '081234567895', job: 'Konsultan' },
-          { name: 'Rudi Hartono', nim: '201001001', year: 2010, email: 'rudi.hartono@example.com', phone: '081234567896', job: 'Arsitek Senior' },
-          { name: 'Lina Wijaya', nim: '201001002', year: 2010, email: 'lina.wijaya@example.com', phone: '081234567897', job: 'Designer' },
-          { name: 'Andi Pratama', nim: '201501001', year: 2015, email: 'andi.pratama@example.com', phone: '081234567898', job: 'Project Manager' },
-          { name: 'Sari Indah', nim: '201501002', year: 2015, email: 'sari.indah@example.com', phone: '081234567899', job: 'Arsitek' },
-          { name: 'Bambang Surya', nim: '201901001', year: 2019, email: 'bambang.surya@example.com', phone: '081234567900', job: 'Konsultan Arsitektur' },
-          { name: 'Maya Sari', nim: '201901002', year: 2019, email: 'maya.sari@example.com', phone: '081234567901', job: 'Designer Interior' },
-          { name: 'Fajar Nugroho', nim: '202001001', year: 2020, email: 'fajar.nugroho@example.com', phone: '081234567902', job: 'Arsitek' },
-          { name: 'Rina Kartika', nim: '202001002', year: 2020, email: 'rina.kartika@example.com', phone: '081234567903', job: 'Konsultan' },
-          { name: 'Dedi Kurniawan', nim: '202101001', year: 2021, email: 'dedi.kurniawan@example.com', phone: '081234567904', job: 'Arsitek Junior' },
-          { name: 'Putri Ayu', nim: '202101002', year: 2021, email: 'putri.ayu@example.com', phone: '081234567905', job: 'Designer' },
-          // TAMBAHKAN DATA ALUMNI LAINNYA DI SINI
-        ];
+        if (typeof alumni === 'undefined') return;
 
         // Hitung jumlah alumni per tahun (2004-2021)
         const counts = {};
         for (let year = 2004; year <= 2021; year++) {
-          counts[year] = alumni.filter(a => a.year === year).length;
+          counts[year] = alumni.filter(a => a.angkatan === year).length;
         }
 
         // Update count di halaman
+        let totalAlumni = 0;
         Object.keys(counts).forEach(year => {
+          const count = counts[year] || 0;
+          totalAlumni += count;
           const el = document.getElementById(`alumni-count-${year}`);
-          if (el) el.textContent = counts[year] || '0';
+          if (el) el.textContent = count;
         });
+
+        // Update total count
+        const totalEl = document.getElementById('alumni-total-count');
+        if (totalEl) totalEl.textContent = totalAlumni;
+        
       })();
 
       // Handle Aspirasi Form - SEDERHANA

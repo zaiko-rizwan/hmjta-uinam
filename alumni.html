@@ -307,7 +307,7 @@
 
   <div class="page-header">
     <h1>Database Alumni</h1>
-    <p>Jejak alumni Teknik Arsitektur UIN Alauddin Makassar dari angkatan 2003-2021</p>
+    <p>Jejak alumni Teknik Arsitektur UIN Alauddin Makassar dari angkatan 2004-2021</p>
   </div>
 
   <div class="container">
@@ -318,7 +318,6 @@
         <label for="filter-year">Tahun:</label>
         <select id="filter-year">
           <option value="">Semua Tahun</option>
-          <option value="2003">2003</option>
           <option value="2004">2004</option>
           <option value="2005">2005</option>
           <option value="2006">2006</option>
@@ -352,6 +351,7 @@
     Copyright © HMJTA 2025. #BravoArsitektur
   </footer>
 
+  <script src="data/alumni.js"></script>
   <script>
     // Mobile menu toggle
     (function() {
@@ -366,13 +366,16 @@
 
         navMenu.querySelectorAll('a').forEach(link => {
           link.addEventListener('click', () => {
+            if (!link.href.includes('#')) {
+              return;
+            }
             menuToggle.classList.remove('active');
             navMenu.classList.remove('active');
           });
         });
 
         document.addEventListener('click', (e) => {
-          if (!e.target.closest('nav') && !e.target.closest('.menu-toggle')) {
+          if (!e.target.closest('header')) {
             menuToggle.classList.remove('active');
             navMenu.classList.remove('active');
           }
@@ -385,70 +388,13 @@
       const filterYear = document.getElementById('filter-year');
       const searchInput = document.getElementById('search');
 
-      /* 
-      ============================================
-      PETUNJUK UNTUK ADMIN - MENAMBAHKAN DATA ALUMNI
-      ============================================
-      
-      Untuk menambahkan data alumni, edit array di bawah ini dengan format:
-      {
-        name: 'Nama Lengkap Alumni',
-        nim: 'NIM',
-        year: TAHUN_LULUS,  // 2003-2021
-        email: 'email@example.com',
-        phone: '081234567890',
-        job: 'Pekerjaan/Saat ini bekerja sebagai...',
-        photo: 'assets/alumni/nama-file.jpg'  // Path foto (opsional)
+      if (typeof alumni === 'undefined' || !Array.isArray(alumni)) {
+        console.error('Data alumni tidak ditemukan atau formatnya salah. Pastikan file data/alumni.js dimuat dengan benar.');
+        listEl.innerHTML = '<div class="empty-state">Gagal memuat data alumni.</div>';
+        return;
       }
-      
-      CARA MENAMBAHKAN FOTO:
-      1. Buat folder: assets/alumni/
-      2. Masukkan foto alumni ke folder tersebut
-      3. Gunakan nama file yang mudah diingat (contoh: ahmad-fauzi.jpg)
-      4. Tambahkan path di field photo: 'assets/alumni/ahmad-fauzi.jpg'
-      
-      CONTOH:
-      {
-        name: 'Ahmad Fauzi',
-        nim: '200301001',
-        year: 2003,
-        email: 'ahmad.fauzi@example.com',
-        phone: '081234567890',
-        job: 'Arsitek di PT. ABC',
-        photo: 'assets/alumni/ahmad-fauzi.jpg'
-      }
-      
-      CATATAN:
-      - Jika tidak ada foto, field photo bisa dikosongkan atau dihapus
-      - Foto akan otomatis menggunakan placeholder jika tidak ditemukan
-      - Format foto: JPG, PNG (disarankan ukuran 200x200px atau lebih besar)
-      
-      ============================================
-      */
-      const alumni = [
-        // Template data alumni - EDIT dengan data yang sebenarnya
-        // Format: { name: 'Nama', nim: 'NIM', year: TAHUN, email: 'email', phone: 'phone', job: 'Pekerjaan', photo: 'path/foto.jpg' }
-        { name: 'Ahmad Fauzi', nim: '200301001', year: 2003, email: 'ahmad.fauzi@example.com', phone: '081234567890', job: 'Arsitek di PT. ABC', photo: 'assets/alumni/ahmad-fauzi.jpg' },
-        { name: 'Siti Nurhaliza', nim: '200301002', year: 2003, email: 'siti.nurhaliza@example.com', phone: '081234567891', job: 'Konsultan Arsitektur', photo: 'assets/alumni/siti-nurhaliza.jpg' },
-        { name: 'Budi Santoso', nim: '200401001', year: 2004, email: 'budi.santoso@example.com', phone: '081234567892', job: 'Project Manager', photo: 'assets/alumni/budi-santoso.jpg' },
-        { name: 'Dewi Lestari', nim: '200401002', year: 2004, email: 'dewi.lestari@example.com', phone: '081234567893', job: 'Designer Interior', photo: 'assets/alumni/dewi-lestari.jpg' },
-        { name: 'Muhammad Rizki', nim: '200501001', year: 2005, email: 'muhammad.rizki@example.com', phone: '081234567894', job: 'Arsitek', photo: 'assets/alumni/muhammad-rizki.jpg' },
-        { name: 'Indah Permata', nim: '200501002', year: 2005, email: 'indah.permata@example.com', phone: '081234567895', job: 'Konsultan', photo: 'assets/alumni/indah-permata.jpg' },
-        { name: 'Rudi Hartono', nim: '201001001', year: 2010, email: 'rudi.hartono@example.com', phone: '081234567896', job: 'Arsitek Senior', photo: 'assets/alumni/rudi-hartono.jpg' },
-        { name: 'Lina Wijaya', nim: '201001002', year: 2010, email: 'lina.wijaya@example.com', phone: '081234567897', job: 'Designer', photo: 'assets/alumni/lina-wijaya.jpg' },
-        { name: 'Andi Pratama', nim: '201501001', year: 2015, email: 'andi.pratama@example.com', phone: '081234567898', job: 'Project Manager', photo: 'assets/alumni/andi-pratama.jpg' },
-        { name: 'Sari Indah', nim: '201501002', year: 2015, email: 'sari.indah@example.com', phone: '081234567899', job: 'Arsitek', photo: 'assets/alumni/sari-indah.jpg' },
-        { name: 'Bambang Surya', nim: '201901001', year: 2019, email: 'bambang.surya@example.com', phone: '081234567900', job: 'Konsultan Arsitektur', photo: 'assets/alumni/bambang-surya.jpg' },
-        { name: 'Maya Sari', nim: '201901002', year: 2019, email: 'maya.sari@example.com', phone: '081234567901', job: 'Designer Interior', photo: 'assets/alumni/maya-sari.jpg' },
-        { name: 'Fajar Nugroho', nim: '202001001', year: 2020, email: 'fajar.nugroho@example.com', phone: '081234567902', job: 'Arsitek', photo: 'assets/alumni/fajar-nugroho.jpg' },
-        { name: 'Rina Kartika', nim: '202001002', year: 2020, email: 'rina.kartika@example.com', phone: '081234567903', job: 'Konsultan', photo: 'assets/alumni/rina-kartika.jpg' },
-        { name: 'Dedi Kurniawan', nim: '202101001', year: 2021, email: 'dedi.kurniawan@example.com', phone: '081234567904', job: 'Arsitek Junior', photo: 'assets/alumni/dedi-kurniawan.jpg' },
-        { name: 'Putri Ayu', nim: '202101002', year: 2021, email: 'putri.ayu@example.com', phone: '081234567905', job: 'Designer', photo: 'assets/alumni/putri-ayu.jpg' },
-        // TAMBAHKAN DATA ALUMNI LAINNYA DI SINI
-        // Format: { name: 'Nama', nim: 'NIM', year: TAHUN, email: 'email', phone: 'phone', job: 'Pekerjaan', photo: 'assets/alumni/nama-file.jpg' }
-      ];
 
-      let filteredAlumni = [...alumni];
+      const defaultPhoto = 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0iI2NjYyI+PHBhdGggZD0iTTEyIDJDNi40OCAyIDIgNi40OCAyIDEyczQuNDggMTAgMTAgMTAgMTAtNC40OCAxMC0xMFMxNy41MiAyIDEyIDJ6bTAgMy41YzEuOTMgMCAzLjUgMS41NyAzLjUgMy41UzEzLjkzIDEyLjUgMTIgMTIuNXMtMy41LTEuNTctMy41LTMuNVMxMC4wNyA1LjUgMTIgNS41em0wIDEzLjVjLTIuOTcgMC01LjQzLTEuNTYtNi45Mi0zLjgxQzYuOTIgMTQuNDEgOS45NyAxMyAxMiAxM3MyLjk4IDEuNDEgNC44MyAzLjE5QzE3LjQzIDE3LjQ0IDE0Ljk3IDE5IDEyIDE5eiIvPjwvc3ZnPg==';
 
       const render = (items) => {
         if (!items || items.length === 0) {
@@ -460,15 +406,17 @@
         items.forEach(item => {
           const card = document.createElement('div');
           card.className = 'alumni-card';
-          const photoSrc = item.photo || 'https://via.placeholder.com/120?text=No+Photo';
+          const photoSrc = item.foto || defaultPhoto;
+          
           card.innerHTML = `
-            <img src="${photoSrc}" alt="${item.name}" class="alumni-photo" onerror="this.src='https://via.placeholder.com/120?text=No+Photo'">
-            <div class="alumni-name">${item.name}</div>
-            <div class="alumni-info"><strong>NIM:</strong> ${item.nim}</div>
-            <div class="alumni-info"><strong>Email:</strong> ${item.email || '-'}</div>
-            <div class="alumni-info"><strong>Telepon:</strong> ${item.phone || '-'}</div>
-            <div class="alumni-info"><strong>Pekerjaan:</strong> ${item.job || '-'}</div>
-            <div class="alumni-year">Lulus ${item.year}</div>
+            <img src="${photoSrc}" alt="Foto ${item.nama}" class="alumni-photo" onerror="this.onerror=null;this.src='${defaultPhoto}';">
+            <div class="alumni-name">${item.nama || '-'}</div>
+            <div class="alumni-info"><strong>Nomor Anggota:</strong> ${item.nomor_anggota || '-'}</div>
+            <div class="alumni-info"><strong>TTL:</strong> ${item.tempat_tanggal_lahir || '-'}</div>
+            <div class="alumni-info"><strong>Alamat:</strong> ${item.alamat || '-'}</div>
+            <div class="alumni-info"><strong>No. HP:</strong> ${item.no_hp || '-'}</div>
+            <div class="alumni-info"><strong>Pekerjaan:</strong> ${item.pekerjaan || '-'}</div>
+            <div class="alumni-year">Angkatan ${item.angkatan || '-'}</div>
           `;
           listEl.appendChild(card);
         });
@@ -478,23 +426,29 @@
         const yearFilter = filterYear.value;
         const searchTerm = searchInput.value.toLowerCase().trim();
 
-        filteredAlumni = alumni.filter(item => {
-          const matchYear = !yearFilter || item.year.toString() === yearFilter;
-          const matchSearch = !searchTerm || 
-            item.name.toLowerCase().includes(searchTerm) ||
-            item.nim.toLowerCase().includes(searchTerm) ||
-            (item.job && item.job.toLowerCase().includes(searchTerm));
+        const filteredAlumni = alumni.filter(item => {
+          const matchYear = !yearFilter || (item.angkatan && item.angkatan.toString() === yearFilter);
+          
+          const searchIn = [
+            item.nama,
+            item.nomor_anggota,
+            item.pekerjaan,
+            item.alamat,
+            item.nama_lapangan
+          ].join(' ').toLowerCase();
+
+          const matchSearch = !searchTerm || searchIn.includes(searchTerm);
           
           return matchYear && matchSearch;
         });
 
         render(filteredAlumni);
       };
-
+      
+      searchInput.placeholder = "Cari nama, ID, pekerjaan, dll...";
       filterYear.addEventListener('change', filter);
       searchInput.addEventListener('input', filter);
 
-      // Initial render
       render(alumni);
     })();
   </script>

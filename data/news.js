@@ -1,6 +1,4 @@
-// Data berita untuk HMJTA UINAM
-// File ini bisa digunakan langsung tanpa server HTTP
-const newsData = [
+[
   {
     "id": 1,
     "title": "[ARSITEKTUR BERBAGI]",
@@ -15,7 +13,7 @@ const newsData = [
     "date": "2025-03-21",
     "excerpt": "HMJTA UINAM Periode 2025 sukses mengadakan kegiatan \"Arsitektur Berbagi\" untuk menumbuhkan rasa kepedulian sosial di Bundaran Samata dan Panti Asuhan Al-Ikhsan.",
     "image": "assets/news/ARSITEKTUR BERBAGI/bagi takjil.jpg",
-    "content": "Jumat, 21 Maret 2025 - Himpunan Mahasiswa Jurusan Teknik Arsitektur (HMJTA) UIN Alauddin Makassar (UINAM) Periode 2025 telah sukses mengadakan kegiatan \"Arsitektur Berbagi\" yang bertujuan menumbuhkan rasa kepedulian sosial. Kegiatan ini dilaksanakan di dua lokasi: bagian pertama adalah pembagian takjil kepada warga dan pengendara di sekitar Bundaran Samata.\n\n<img src=\"assets/news/arsitektur-berbagi-takjil.jpg\" alt=\"Pembagian takjil di Bundaran Samata\" style=\"width: 100%; max-width: 800px; height: auto; border-radius: 12px; margin: 20px 0; box-shadow: 0 4px 12px rgba(0,0,0,0.1); display: block; margin-left: auto; margin-right: auto;\">\n\nSelanjutnya, para pengurus dan anggota HMJTA melanjutkan ke Panti Asuhan Al-Ikhsan yang terletak di Jalan Bontotangna untuk membagikan sembako dan kebutuhan dasar.\n\n<img src=\"assets/news/arsitektur-berbagi-panti.jpg\" alt=\"Pembagian sembako di Panti Asuhan Al-Ikhsan\" style=\"width: 100%; max-width: 800px; height: auto; border-radius: 12px; margin: 20px 0; box-shadow: 0 4px 12px rgba(0,0,0,0.1); display: block; margin-left: auto; margin-right: auto;\">\n\nSelain memberikan bantuan material, peserta juga berinteraksi dengan anak-anak panti melalui permainan dan percakapan hangat. Kegiatan \"Arsitektur Berbagi\" ini merupakan wujud komitmen HMJTA UINAM Periode 2025 untuk tidak hanya fokus pada akademik dan keterampilan arsitektur, tetapi juga berperan aktif dalam memberikan kontribusi positif bagi masyarakat sekitar."
+    "content": "Jumat, 21 Maret 2025 - Himpunan Mahasiswa Jurusan Teknik Arsitektur (HMJTA) UIN Alauddin Makassar (UINAM) Periode 2025 telah sukses mengadakan kegiatan \"Arsitektur Berbagi\" yang bertujuan menumbuhkan rasa kepedulian sosial. Kegiatan ini dilaksanakan di dua lokasi: bagian pertama adalah pembagian takjil kepada warga dan pengendara di sekitar Bundaran Samata.\n\n<img src=\"assets/news/ARSITEKTUR BERBAGI/bagi takjil 2.jpg\" alt=\"Pembagian takjil di Bundaran Samata\" style=\"width: 100%; max-width: 800px; height: auto; border-radius: 12px; margin: 20px 0; box-shadow: 0 4px 12px rgba(0,0,0,0.1); display: block; margin-left: auto; margin-right: auto;\">\n\nSelanjutnya, para pengurus dan anggota HMJTA melanjutkan ke Panti Asuhan Al-Ikhsan yang terletak di Jalan Bontotangna untuk membagikan sembako dan kebutuhan dasar.\n\n<img src=\"assets/news/ARSITEKTUR BERBAGI/panti asuhan.jpg\" alt=\"Pembagian sembako di Panti Asuhan Al-Ikhsan\" style=\"width: 100%; max-width: 800px; height: auto; border-radius: 12px; margin: 20px 0; box-shadow: 0 4px 12px rgba(0,0,0,0.1); display: block; margin-left: auto; margin-right: auto;\">\n\nSelain memberikan bantuan material, peserta juga berinteraksi dengan anak-anak panti melalui permainan dan percakapan hangat. Kegiatan \"Arsitektur Berbagi\" ini merupakan wujud komitmen HMJTA UINAM Periode 2025 untuk tidak hanya fokus pada akademik dan keterampilan arsitektur, tetapi juga berperan aktif dalam memberikan kontribusi positif bagi masyarakat sekitar."
   },
   {
     "id": 3,
@@ -23,7 +21,7 @@ const newsData = [
     "date": "2025-06-07",
     "excerpt": "Kegiatan kurban HMJTA Periode 2025 dilaksanakan pada Sabtu, 7 Juni 2025 pukul 08.00-12.00 WITA di Kampung Nelayan Kab. Gowa. Kurban HMJTA bekerja sama dengan Dompet Dhuafa,",
     "image": "assets/news/ARSITEKTUR BERBAGI DAGING KURBAN/21.png",
-    "content": "Kegiatan kurban HMJTA Periode 2025 dilaksanakan pada Sabtu, 7 Juni 2025 pukul 08.00-12.00 WITA di Kampung Nelayan Kab. Gowa. Kurban HMJTA bekerja sama dengan Dompet Dhuafa, diikuti proses sembelih ekor sapi sesuai syariat, pemisahan daging, dan pembagian kepada keluarga kurang mampu.\n\n<img src=\"assets/news/ARSITEKTUR BERBAGI DAGING KURBAN/21.png\" alt=\"Proses sembelih ekor sapi\" style=\"width: 100%; max-width: 800px; height: auto; border-radius: 12px; margin: 20px 0; box-shadow: 0 4px 12px rgba(0,0,0,0.1); display: block; margin-left: auto; margin-right: auto;\">\n\nDiikuti oleh pengurus dan anggota HMJTA serta Dompet Dhuafa. Kegiatan ini bertujuan memeriahkan Idul Adha, menumbuhkan gotong-royong, dan memberikan manfaat nyata."
+    "content": "Kegiatan kurban HMJTA Periode 2025 dilaksanakan pada Sabtu, 7 Juni 2025 pukul 08.00-12.00 WITA di Kampung Nelayan Kab. Gowa. Kurban HMJTA bekerja sama dengan Dompet Dhuafa, diikuti proses sembelih ekor sapi sesuai syariat, pemisahan daging, dan pembagian kepada keluarga kurang mampu.\n\n<img src=\"assets/news/ARSITEKTUR BERBAGI DAGING KURBAN/19.png\" alt=\"Proses sembelih ekor sapi\" style=\"width: 100%; max-width: 800px; height: auto; border-radius: 12px; margin: 20px 0; box-shadow: 0 4px 12px rgba(0,0,0,0.1); display: block; margin-left: auto; margin-right: auto;\">\n\nDiikuti oleh pengurus dan anggota HMJTA serta Dompet Dhuafa. Kegiatan ini bertujuan memeriahkan Idul Adha, menumbuhkan gotong-royong, dan memberikan manfaat nyata."
   },
   {
     "id": 4,
@@ -55,7 +53,7 @@ const newsData = [
     "date": "2025-05-01",
     "excerpt": "\"Peringatan Hari Buruh lahir dari sebuah aksi demonstrasi. Peristiwa ini terjadi pada 1 Mei 1886 di Chicago, Amerika Serikat. Pada saat itu, para buruh menuntut pengurangan jam kerja yang awalnya 10 hingga 16 jam sehari  menjadi 8 jam sehari. Peristiwa tersebut dikenal sebagai Haymarket Affair. Peristiwa ini kemudian menjadi titik balik bagi perjuangan buruh global.",
     "image": "assets/news/HARI BURUH/1.jpg",
-    "content": "\"Peringatan Hari Buruh lahir dari sebuah aksi demonstrasi. Peristiwa ini terjadi pada 1 Mei 1886 di Chicago, Amerika Serikat. Pada saat itu, para buruh menuntut pengurangan jam kerja yang awalnya 10 hingga 16 jam sehari  menjadi 8 jam sehari. Peristiwa tersebut dikenal sebagai Haymarket Affair. Peristiwa ini kemudian menjadi titik balik bagi perjuangan buruh global.\n\nSebagai bentuk solidaritas dan penghormatan, Konferensi Sosialis Internasional di Paris pada 1889 menetapkan 1 Mei sebagai Hari Buruh Internasional. Di Indonesia, Hari Buruh Internasional dimulai sejak 1 Mei 1918 oleh serikat buruh Kung Tang Hwee di Semarang. Banyak tuntutan diajukan oleh para buruh di Indonesia untuk mencapai kesejahteraan bekerja, mulai dari jam kerja yang wajar, upah layak, dan lainnya. Peringatan Hari Buruh ini terus diperingati hingga saat ini untuk memperjuangkan hak-hak buruh.\"\n\nSelamat Memperingati Hari Buruh!\n\n————————————\nIkuti terus informasi seputar HMJTA UINAM di:\n\nOfficial Account HMJTA UINAM\nInstagram: @hmjta_uinam\nYoutube: HMJ Teknik Arsitektur UINAM\nEmail: hmjteknikarsitekturuinam@gmail.com\n\n#HMJTA2025\n<br>#TeknikArsitektur\n<br>#BravoArsitektur"
+    "content": "\"Peringatan Hari Buruh lahir dari sebuah aksi demonstrasi. Peristiwa ini terjadi pada 1 Mei 1886 di Chicago, Amerika Serikat. Pada saat itu, para buruh menuntut pengurangan jam kerja yang awalnya 10 hingga 16 jam sehari  menjadi 8 jam sehari. Peristiwa tersebut dikenal sebagai Haymarket Affair. Peristiwa ini kemudian menjadi titik balik bagi perjuangan buruh global.\n\nSebagai bentuk solidaritas dan penghormatan, Konferensi Sosialis Internasional di Paris pada 1889 menetapkan 1 Mei sebagai Hari Buruh Internasional. Di Indonesia, Hari Buruh Internasional dimulai sejak 1 Mei 1918 oleh serikat buruh Kung Tang Hwee di Semarang. Banyak tuntutan diajukan oleh para buruh di Indonesia untuk mencapai kesejahteraan bekerja, mulai dari jam kerja yang wajar, upah layak, dan lainnya. Peringatan Hari Buruh ini terus diperingati hingga saat ini untuk memperjuangkan hak-hak buruh.\"\n\nSelamat Memperingati Hari Buruh!\n<br>Ikuti terus informasi seputar HMJTA UINAM di:\n\nOfficial Account HMJTA UINAM\n<br>Instagram: @hmjta_uinam\n<br>Youtube: HMJ Teknik Arsitektur UINAM\n<br>Email: hmjteknikarsitekturuinam@gmail.com\n\n#HMJTA2025\n<br>#TeknikArsitektur\n<br>#BravoArsitektur"
   },
   {
     "id": 8,
@@ -64,14 +62,14 @@ const newsData = [
     "excerpt": "\"Hari ini, kita memperingati Hari Pendidikan Nasional, sebuah momentum untuk mengenang jasa Bapak Pendidikan Indonesia, Ki Hajar Dewantara. Melalui semboyannya yang terkenal — Ing ngarsa sung tuladha, ing madya mangun karsa, tut wuri handayani — beliau mengajarkan bahwa pendidikan bukan hanya soal ilmu, tetapi juga tentang keteladanan, dorongan, dan semangat membangun generasi yang berkarakter.",
     "image": "assets/news/HARI PENDIDIKAN NASIONAL/1.jpg",
     "content": "\"Hari ini, kita memperingati Hari Pendidikan Nasional, sebuah momentum untuk mengenang jasa Bapak Pendidikan Indonesia, Ki Hajar Dewantara. Melalui semboyannya yang terkenal — Ing ngarsa sung tuladha, ing madya mangun karsa, tut wuri handayani — beliau mengajarkan bahwa pendidikan bukan hanya soal ilmu, tetapi juga tentang keteladanan, dorongan, dan semangat membangun generasi yang berkarakter.\n\nPendidikan adalah jembatan masa depan. Di tengah tantangan zaman yang terus berubah, peran pendidikan menjadi semakin penting dalam membentuk insan yang tidak hanya cerdas secara intelektual, tetapi juga beretika, kreatif, dan peduli terhadap sesama. Oleh karena itu, mari kita jadikan Hari Pendidikan Nasional ini sebagai pengingat bahwa kita semua — guru, siswa, orang tua, dan masyarakat — memiliki tanggung jawab bersama dalam mencerdaskan kehidupan bangsa\".\n\nSelamat Hari Pendidikan Nasional! Mari terus menyalakan api semangat belajar dan berkarya, demi Indonesia yang lebih maju, adil, dan beradab!\n\nIkuti terus informasi seputar HMJTA UINAM di:\n\nOfficial Account HMJTA UINAM\n<br>Instagram: @hmjta_uinam\n<br>Youtube: HMJ Teknik Arsitektur UINAM\n<br>Email: hmjteknikarsitekturuinam@gmail.com\n\n#HMJTA2025\n<br>#TeknikArsitektur\n<br>#BravoArsitektur"
-  },
+  },  
   {
     "id": 9,
     "title": "HARI RAYA IDUL FITRI 1446 H",
     "date": "2025-03-30",
     "excerpt": "\"Assalamualaikum Warahmatullahi Wabarakatuh. Puji syukur kita panjatkan ke hadirat Allah SWT yang telah memberikan kita nikmat iman, islam, dan kesehatan sehingga kita dapat kembali merayakan hari besar yang penuh makna—Idul Fitri, dengan suka cita dan keikhlasan.",
     "image": "assets/news/HARI RAYA IDUL FITRI 1446 H/1.jpg",
-    "content": "\"Assalamualaikum Warahmatullahi Wabarakatuh\n\nPuji syukur kita panjatkan ke hadirat Allah SWT yang telah memberikan kita nikmat iman, islam, dan kesehatan sehingga kita dapat kembali merayakan hari besar yang penuh makna—Idul Fitri, dengan suka cita dan keikhlasan.\n\nTaqabbalallahu minna wa minkum, shiyamana wa shiyamakum, wa kullu ‘am wa antum bikhair.\n\nWassalamu Alaikum Warahmatullahi Wabarakatuh\"\n\nIkuti terus informasi seputar HMJTA UINAM di:\n\nOfficial Account HMJTA UINAM\n<br>Instagram: @hmjta_uinam\n<br>Youtube: HMJ Teknik Arsitektur UINAM\n<br>Email: hmjteknikarsitekturuinam@gmail.com\n\n#HMJTA2025\n<br>#TeknikArsitektur\n<br>#BravoArsitektur"
+    "content": "\"Assalamualaikum Warahmatullahi Wabarakatuh\n\nPuji syukur kita panjatkan ke hadirat Allah SWT yang telah memberikan kita nikmat iman, islam, dan kesehatan sehingga kita dapat kembali merayakan hari besar yang penuh makna—Idul Fitri, dengan suka cita dan keikhlasan.\n\nTaqabbalallahu minna wa minkum, shiyamana wa shiyamakum, wa kullu ‘am wa antum bikhair.\n\nWassalamu Alaikum Warahmatullahi Wabarakatuh\"\n\nIkuti terus informasi seputar HMJTA UINAM di:\n\nOfficial Account HMJTA UINAM\n<br>Instagram: @hmjta_uinam\n<br>Youtube: HMJ Teknik Arsitektur UINAM\n<br>Email: hmjteknikarsitekturuinam@gmail.com\n\n#HMJTA2025\n<br>#TeknikArsitektur\n<br>#BravoArsitektur" 
   },
   {
     "id": 10,
@@ -79,7 +77,7 @@ const newsData = [
     "date": "2025-03-29",
     "excerpt": "\"Nyepi adalah hari suci umat Hindu yang dirayakan setiap Tahun Baru Saka. Hari ini jatuh pada hitungan Tilem Kesanga (IX) yang merupakan hari penyucian dewa-dewa yang berada di pusat samudera yang membawa intisari amerta air hidup. Untuk itu umat Hindu melakukan pemujaan suci terhadap mereka.\"",
     "image": "assets/news/HARI RAYA NYEPI/1.jpg",
-    "content": "\"Nyepi adalah hari suci umat Hindu yang dirayakan setiap Tahun Baru Saka. Hari ini jatuh pada hitungan Tilem Kesanga (IX) yang merupakan hari penyucian dewa-dewa yang berada di pusat samudera yang membawa intisari amerta air hidup. Untuk itu umat Hindu melakukan pemujaan suci terhadap mereka\"\n\nInstagram: @hmjta_uinam\n<br>YouTube: HMJ Teknik Arsitektur UINAM\n<br>Email: hmjteknikarsitekturuinam@gmail.com\n\n#HMJTA2025\n<br>#TeknikArsitektur\n<br>#BravoArsitektur"
+    "content": "\"Nyepi adalah hari suci umat Hindu yang dirayakan setiap Tahun Baru Saka. Hari ini jatuh pada hitungan Tilem Kesanga (IX) yang merupakan hari penyucian dewa-dewa yang berada di pusat samudera yang membawa intisari amerta air hidup. Untuk itu umat Hindu melakukan pemujaan suci terhadap mereka\"\n\nInstagram: @hmjta_uinam\n<br>YouTube: HMJ Teknik Arsitektur UINAM\n<br>Email: hmjteknikarsitekturuinam@gmail.com\n\n#HMJTA2025\n<br>#TeknikArsitektur\n<br>#BravoArsitektur"   
   },
   {
     "id": 11,
@@ -93,9 +91,9 @@ const newsData = [
     "id": 12,
     "title": "HARI KEBANGKITAN NASIONAL",
     "date": "2025-05-20",
-    "excerpt": "\"Hari Kebangkitan Nasional diperingati sebagai momentum bangkitnya semangat persatuan dan kesadaran nasional bangsa Indonesia. Peristiwa ini menandai lahirnya perjuangan yang tidak lagi bersifat kedaerahan, tetapi mengutamakan kepentingan bangsa secara keseluruhan. Melalui semangat kebangkitan nasional, generasi muda diharapkan mampu meneruskan perjuangan para pendahulu dengan berkarya, berinovasi, dan menjaga persatuan demi kemajuan Indonesia\"",
+    "excerpt": "\"Hari Kebangkitan Nasional diperingati sebagai momentum bangkitnya semangat persatuan dan kesadaran nasional bangsa Indonesia. Peristiwa ini menandai lahirnya perjuangan yang tidak lagi bersifat kedaerahan, tetapi mengutamakan kepentingan bangsa secara keseluruhan. Melalui semangat kebangkitan nasional, generasi muda diharapkan mampu meneruskan perjuangan para pendahulu dengan berkarya, berinovasi, dan menjaga persatuan demi kemajuan Indonesia.\"",
     "image": "assets/news/HARI KEBANGKITAN NASIONAL/1.jpg",
-    "content": "\"Hari Kebangkitan Nasional diperingati sebagai momentum bangkitnya semangat persatuan dan kesadaran nasional bangsa Indonesia. Peristiwa ini menandai lahirnya perjuangan yang tidak lagi bersifat kedaerahan, tetapi mengutamakan kepentingan bangsa secara keseluruhan. Melalui semangat kebangkitan nasional, generasi muda diharapkan mampu meneruskan perjuangan para pendahulu dengan berkarya, berinovasi, dan menjaga persatuan demi kemajuan Indonesia\"\n\nIkuti terus informasi seputar HMJTA UINAM di:\n\nOfficial Account HMJTA UINAM\n<br>Instagram: @hmjta_uinam\n<br>Youtube: HMJ Teknik Arsitektur UINAM\n<br>Email: hmjteknikarsitekturuinam@gmail.com\n\n#HMJTA2025\n<br>#TeknikArsitektur\n<br>#BravoArsitektur"
+    "content": "\"Hari Kebangkitan Nasional diperingati sebagai momentum bangkitnya semangat persatuan dan kesadaran nasional bangsa Indonesia. Peristiwa ini menandai lahirnya perjuangan yang tidak lagi bersifat kedaerahan, tetapi mengutamakan kepentingan bangsa secara keseluruhan. Melalui semangat kebangkitan nasional, generasi muda diharapkan mampu meneruskan perjuangan para pendahulu dengan berkarya, berinovasi, dan menjaga persatuan demi kemajuan Indonesia\"\n\nIkuti terus informasi seputar HMJTA UINAM di:\n\nOfficial Account HMJTA UINAM\n<br>Instagram: @hmjta_uinam\n<br>Youtube: HMJ Teknik Arsitektur UINAM\n<br>Email: hmjteknikarsitekturuinam@gmail.com\n\n#HMJTA2025\n<br>#TeknikArsitektur\n<br>#BravoArsitektur" 
   },
   {
     "id": 13,
@@ -119,7 +117,7 @@ const newsData = [
     "date": "2025-06-27",
     "excerpt": "Assalamualaikum Warahmatullahi Wabarakatuh\n\n\"1 Muharram tanda awal tahun baru dalam kalender Hijriah. Mari kita sambut tahun baru ini dengan penuh harapan dan tekad untuk menjadi pribadi yang lebih baik, serta senantiasa bersyukur atas segala nikmat yang telah Allah SWT berikan.\"",
     "image": "assets/news/TAHUN BARU ISLAM 1447 H/1.jpg",
-    "content": "Assalamualaikum Warahmatullahi Wabarakatuh\n\n\"1 Muharram tanda awal tahun baru dalam kalender Hijriah. Mari kita sambut tahun baru ini dengan penuh harapan dan tekad untuk menjadi pribadi yang lebih baik, serta senantiasa bersyukur atas segala nikmat yang telah Allah SWT berikan.\"\n\nWassalamu Alaikum Warahmatullahi Wabarakatuh\n\nIkuti terus informasi seputar HMJTA UINAM di:\n\nOfficial Account HMJTA UINAM\n<br>Instagram: @hmjta_uinam\n<br>Youtube: HMJ Teknik Arsitektur UINAM\n<br>Email: hmjteknikarsitekturuinam@gmail.com\n\n#HMJTA2025\n<br>#TeknikArsitektur\n<br>#BravoArsitektur"
+    "content": "Assalamualaikum Warahmatullahi Wabarakatuh\n\n\"1 Muharram tanda awal tahun baru dalam kalender Hijriah. Mari kita sambut tahun baru ini dengan penuh harapan dan tekad untuk menjadi pribadi yang lebih baik, serta senantiasa bersyukur atas segala nikmat yang telah Allah SWT berikan.\"\n\nWassalamu Alaikum Warahmatullahi Wabarakatuh\n\nIkuti terus informasi seputar HMJTA UINAM di:\n\nOfficial Account HMJTA UINAM\n<br>Instagram: @hmjta_uinam\n<br>Youtube: HMJ Teknik Arsitektur UINAM\n<br>Email: hmjteknikarsitekturuinam@gmail.com\n\n#HMJTA2025\n<br>#TeknikArsitektur\n<br>#BravoArsitektur" 
   },
   {
     "id": 16,
@@ -152,7 +150,7 @@ const newsData = [
     "excerpt": "\"Dari sehelai kain batik, terpancar keagungan Indonesia. Setiap motif adalah doa, setiap warna adalah harapan. Mari jadikan Hari Batik momentum untuk terus mencintai dan menjaga kekayaan budaya kita.\"",
     "image": "assets/news/HARI BATIK NASIONAL/1.jpg",
     "content": "\"Dari sehelai kain batik, terpancar keagungan Indonesia. Setiap motif adalah doa, setiap warna adalah harapan. Mari jadikan Hari Batik momentum untuk terus mencintai dan menjaga kekayaan budaya kita.\"\n\nbaca selengkapnya: \nhttps://www.instagram.com/p/DPSs3l2k-AB/?img_index=3&igsh=enQxcm1xNjV3b2E1\n\nInstagram: @hmjta_uinam\n<br>Youtube: HMJ Teknik Arsitektur UINAM\n<br>Email: hmjteknikarsitekturuinam@gmail.com\n\n#HMJTA2025\n<br>#TeknikArsitektur\n<br>#BravoArsitektur"
-  },  
+  },
   {
     "id": 20,
     "title": "[MENGENANG TRAGEDI G30S/PKI]",
@@ -184,5 +182,13 @@ const newsData = [
     "excerpt": "\"Hari Pahlawan diperingati setiap 10 November sebagai momen untuk mengenang keberanian para pejuang yang rela mengorbankan jiwa dan raga demi mempertahankan kemerdekaan Indonesia. Pertempuran Surabaya tahun 1945 menjadi simbol semangat perlawanan yang pantang menyerah, menunjukkan bahwa persatuan dan keberanian mampu menghadapi kekuatan apa pun. Hari ini, kita meneruskan semangat kepahlawanan itu dengan berkontribusi melalui tindakan nyata, bekerja dengan integritas, dan menjaga persatuan bangsa agar cita-cita para pahlawan tetap hidup dalam kehidupan kita sehari-hari.\"",
     "image": "assets/news/HARI PAHLAWAN NASIONAL/1.jpg",
     "content": "\"Hari Pahlawan diperingati setiap 10 November sebagai momen untuk mengenang keberanian para pejuang yang rela mengorbankan jiwa dan raga demi mempertahankan kemerdekaan Indonesia. Pertempuran Surabaya tahun 1945 menjadi simbol semangat perlawanan yang pantang menyerah, menunjukkan bahwa persatuan dan keberanian mampu menghadapi kekuatan apa pun. Hari ini, kita meneruskan semangat kepahlawanan itu dengan berkontribusi melalui tindakan nyata, bekerja dengan integritas, dan menjaga persatuan bangsa agar cita-cita para pahlawan tetap hidup dalam kehidupan kita sehari-hari.\"\n\nIkuti terus informasi seputar HMJTA UINAM di:\n\nOfficial Account HMJTA UINAM\n<br>Instagram: @hmjta_uinam\n<br>Youtube: HMJ Teknik Arsitektur UINAM\n<br>Email: hmjteknikarsitekturuinam@gmail.com\n\n#HMJTA2025\n<br>#TeknikArsitektur\n<br>#BravoArsitektur"
-  }
-];
+  },
+  {
+    "id": 24,
+    "title": "KEGIATAN SOFTSKILL",
+    "date": "2025-07-22",
+    "excerpt": "Kegiatan Softskill HMJTA Periode 2025 dilaksanakan pada Kamis, 22 Juli 2025. Kegiatan ini diikuti oleh pengurus dan anggota HMJTA dengan rangkaian agenda berupa pemaparan materi, diskusi interaktif, serta latihan pengembangan kemampuan diri.",
+    "image": "assets/news/SOFTSKILL/5.jpg",
+    "content": "Kegiatan Softskill HMJTA Periode 2025 dilaksanakan pada Kamis, 22 Juli 2025. Kegiatan ini diikuti oleh pengurus dan anggota HMJTA dengan rangkaian agenda berupa pemaparan materi, diskusi interaktif, serta latihan pengembangan kemampuan diri. Pelaksanaan kegiatan berjalan dengan tertib dan partisipatif. Kegiatan softskill ini bertujuan untuk meningkatkan kapasitas personal, melatih keterampilan komunikasi dan kerja sama tim, serta membekali anggota dengan kemampuan penunjang akademik dan organisasi.\"\n\nIkuti terus informasi seputar HMJTA UINAM di:\n\nOfficial Account HMJTA UINAM\n<br>Instagram: @hmjta_uinam\n<br>Youtube: HMJ Teknik Arsitektur UINAM\n<br>Email: hmjteknikarsitekturuinam@gmail.com\n\n#HMJTA2025\n<br>#TeknikArsitektur\n<br>#BravoArsitektur"
+  }  
+]
